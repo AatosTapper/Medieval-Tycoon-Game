@@ -1,0 +1,27 @@
+.Profile-Info-Box {
+    display: flex;
+    flex-direction: column;
+
+    width: min-content;
+}
+
+#Profile-Info-Name {
+    font-size: large;
+    width: max-content;
+
+    padding: 0.5vw;
+}
+
+#Profile-Info-Level {
+    font-size: medium;
+    width: max-content;
+
+    padding: 0.5vw;
+}
+
+#Profile-Info-XP {
+    font-size: medium;
+    width: max-content;
+
+    padding: 0.5vw;
+}

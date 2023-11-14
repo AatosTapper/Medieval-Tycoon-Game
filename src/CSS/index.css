@@ -1,1 +1,20 @@
-/*This too is a placeholder*/
+/* 
+If the class isn't specific to any component,
+put it here.
+*/
+
+body {
+    margin: 0px;
+}
+
+.Game {
+    margin: 0px;
+}
+
+.Generic-Ui-Component {
+    background-color: blue;
+
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}

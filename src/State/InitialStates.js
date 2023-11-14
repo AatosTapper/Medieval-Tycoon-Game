@@ -4,6 +4,7 @@
 
 // This could hold the data related to the player
 export const initialPlayerState = {
+    name: "Bruh",
     xp: 0,
     level: 1,
     money: 0
