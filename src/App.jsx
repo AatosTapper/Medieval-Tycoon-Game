@@ -13,7 +13,7 @@ function App() {
     return (
         <>
         {/* This is a component that provides the player state variable to all components inside it */}
-        <PlayerContextProvider value={{ playerState, usePlayerState: setPlayerState }}>
+        <PlayerContextProvider value={{ playerState, setPlayerState }}>
             <MainGameComponent /> {/* So this component and all components inside it can access the state variable */}
         </PlayerContextProvider>
         </>
