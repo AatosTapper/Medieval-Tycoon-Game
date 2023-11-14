@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainGameComponent from './Components/Game/MainGameComponent';
 import MainMenuComponent from './Components/Menu/MainMenuComponent';
 import { PlayerContextProvider } from './State/PlayerContextProvider';
@@ -20,7 +21,12 @@ function App() {
         <UtilContextProvider value={{ utilState, setUtilState }}>
         <WorldContextProvider value={{ worldState, setWorldState }}>
         <PlayerContextProvider value={{ playerState, setPlayerState }}>
-            <MainGameComponent /> {/* So this component and all components inside it can access the state variables */}
+            <Router>
+                <Routes>
+                    <Route path="/" exact element={<MainMenuComponent />} />
+                    <Route path="/game" element={<MainGameComponent />} /> {/* So this component and all components inside it can access the state variables */}
+                </Routes>
+            </Router>
         </PlayerContextProvider>
         </WorldContextProvider>
         </UtilContextProvider>
