@@ -19,6 +19,7 @@ export default function MainGameComponent() {
     return (
         <>
         <h1>Game page</h1>
+        <h1> Bonjour </h1>
         <button onClick={backToMainMenu}>Return To Main Menu</button>
         <a>{playerState.level}</a> {/* This component can now access the player level! */}
         </>
