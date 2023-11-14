@@ -3,6 +3,7 @@ import { usePlayerContext } from "../../State/PlayerContextProvider";
 import { useWorldContext } from "../../State/WorldContextProvider";
 import { useUtilContext } from "../../State/UtilContextProvider";
 import { useNavigate } from "react-router-dom";
+import NewDay from "../../Logic/DayCycle";
 
 // Before looking at this, go to the app component and make sure it makes sense.
 
@@ -21,7 +22,8 @@ export default function MainGameComponent() {
         <h1>Game page</h1>
         <h1> Bonjour </h1>
         <button onClick={backToMainMenu}>Return To Main Menu</button>
-        <a>{playerState.level}</a> {/* This component can now access the player level! */}
+        <a>{worldState.day}</a> {/* This component can now access the player level! */}
+        <button onClick={() => NewDay(setWorldState)}>Change day</button>
         </>
     );
 }

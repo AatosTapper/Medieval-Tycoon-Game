@@ -11,7 +11,7 @@ export const initialPlayerState = {
 
 // This could hold the data related to the game world outside the player
 export const initialWorldState = {
-
+    day: 0
 }
 
 // This could hold some random utility data if / when needed
