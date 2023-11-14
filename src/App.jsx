@@ -8,12 +8,12 @@ import { initialPlayerState } from './State/InitialStates'; // Look inside this 
 // go to the MainGameComponent. 
 
 function App() {
-    const [playerState, usePlayerState] = useState(initialPlayerState); // this is the variable that holds player state
+    const [playerState, setPlayerState] = useState(initialPlayerState); // this is the variable that holds player state
 
     return (
         <>
         {/* This is a component that provides the player state variable to all components inside it */}
-        <PlayerContextProvider value={{ playerState, usePlayerState }}>
+        <PlayerContextProvider value={{ playerState, usePlayerState: setPlayerState }}>
             <MainGameComponent /> {/* So this component and all components inside it can access the state variable */}
         </PlayerContextProvider>
         </>
