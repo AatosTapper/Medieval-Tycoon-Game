@@ -21,11 +21,15 @@ export default function MainGameComponent() {
         navigate("/");
     }
 
+    const nextDay = () => {
+        NewDay(worldState, setWorldState, playerState, setPlayerState);
+    }
+
     return (
         <div className="Font-Medieval Game">
             <h1>Game page</h1>
             <button onClick={backToMainMenu}>Return To Main Menu</button>
-            <button onClick={() => NewDay(setWorldState)}>Change day</button>
+            <button onClick={nextDay}>Change day</button>
             <ProfileInfo />
             <OfferComponent />
             <pre>{JSON.stringify(worldState, null, 4)}</pre>
