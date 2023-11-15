@@ -1,3 +1,4 @@
+import OfferGenerator from "./NewOffers";
 const CalcWeek = (days) => Math.floor((days - 1) / 7);
 
 const GetWeekday = (day) => {
@@ -30,8 +31,11 @@ const IncrementDay = (setWorldState) => {
     }));
 }
 
-const NewDay = (setWorldState) => {
+const NewDay = (setWorldState, offers, setOffers) => {
     IncrementDay(setWorldState);
+    OfferGenerator();
+    
+    
 }
 
 export default NewDay;

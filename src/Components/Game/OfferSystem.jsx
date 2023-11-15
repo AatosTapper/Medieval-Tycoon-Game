@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { ITEM } from "../../Logic/Item";
 import { usePlayerContext } from "../../State/PlayerContextProvider";
+import { useWorldContext } from "../../State/WorldContextProvider";
+
+
+
+
 
 const OfferComponent = () => {
   const { playerState, setPlayerState } = usePlayerContext()
-  const [offers, setOffers] = useState([[1,20, "apple"], [2, 100, "wood"]]);
+  const { worldState, setWorldState } = useWorldContext();
   
+
   const [realRandomObject, setRealRandomObject] = useState(null);
+   
+  
 
   const GetWithName = (objectName) => {
     return ITEM[objectName];
@@ -40,8 +48,16 @@ const OfferComponent = () => {
       
       
       <OfferDisplay offers={offers} handleAccept={handleAccept} />
+      
     </div>
   );
+
+  const AddOffer = (setWorldState, offer) => {
+    setWorldState(oldWorld => ({
+        ...oldWorld,
+        offers: oldWorld.offers.push(offer)
+    }));
+}
 };
 
 const OfferDisplay = ({ offers, handleAccept }) => {
