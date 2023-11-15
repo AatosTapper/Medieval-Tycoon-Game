@@ -1,5 +1,6 @@
 import { ITEM } from "./Item";
 import AddItemToInventory from "./Inventory"
+import Transaction from "./Transaction";
 
 const GetWithName = (objectName) => {
     return ITEM[objectName];
@@ -29,7 +30,6 @@ export function GenerateOffers(worldState, setWorldState, playerState) {
     }
 };
 
-// TODO: add the offer to the player's inventory
 export function AcceptOffer(worldState, setWorldState, playerState, setPlayerState, index) {
     const offerCost = worldState.currentOffers[index][1];
     console.log("Offer cost:", offerCost);
@@ -39,6 +39,7 @@ export function AcceptOffer(worldState, setWorldState, playerState, setPlayerSta
         return false;
     }
 
+    Transaction(setPlayerState, -offerCost);
     AddItemToInventory(playerState, setPlayerState, worldState.currentOffers[index][2], worldState.currentOffers[index][0]);
 
     setWorldState(oldState => {
@@ -57,15 +58,10 @@ export function AcceptOffer(worldState, setWorldState, playerState, setPlayerSta
         };
     });
 
-    setPlayerState(oldState => ({
-        ...oldState,
-        money: oldState.money - offerCost
-    }));
-
     return true;
 }
 
-export function UpdateOffers(worldState, setWorldState) {
+export function UpdateOffers(setWorldState) {
     setWorldState(oldState => {
         if (!oldState || !oldState.currentOffers) {
             console.error("Invalid state or currentOffers is undefined/null");
