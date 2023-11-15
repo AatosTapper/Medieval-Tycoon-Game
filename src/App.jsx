@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainGameComponent from './Components/Game/MainGameComponent';
 import MainMenuComponent from './Components/Menu/MainMenuComponent';
 import { PlayerContextProvider } from './State/PlayerContextProvider';
-import { initialPlayerState, initialUtilState, initialWorldState } from './State/InitialStates'; // Look inside this file
+import { getInitialPlayerState, getInitialUtilState, getInitialWorldState } from './State/InitialStates'; // Look inside this file
 import { WorldContextProvider } from './State/WorldContextProvider';
 import { UtilContextProvider } from './State/UtilContextProvider';
 
@@ -11,9 +11,9 @@ import { UtilContextProvider } from './State/UtilContextProvider';
 // go to the MainGameComponent. 
 
 function App() {
-    const [playerState, setPlayerState] = useState(initialPlayerState); // this is the variable that holds player state
-    const [worldState, setWorldState] = useState(initialWorldState);
-    const [utilState, setUtilState] = useState(initialUtilState);
+    const [playerState, setPlayerState] = useState(getInitialPlayerState()); // this is the variable that holds player state
+    const [worldState, setWorldState] = useState(getInitialWorldState());
+    const [utilState, setUtilState] = useState(getInitialUtilState());
 
     return (
         <>

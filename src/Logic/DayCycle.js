@@ -1,4 +1,4 @@
-const CalcWeek = (days) => Math.floor(days / 7);
+const CalcWeek = (days) => Math.floor((days - 1) / 7);
 
 const GetWeekday = (day) => {
     switch (day % 7) {

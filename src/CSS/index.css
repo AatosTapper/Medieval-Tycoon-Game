@@ -3,6 +3,10 @@ If the class isn't specific to any component,
 put it here.
 */
 
+.Font-Medieval {
+    font-family: 'MedievalSharp', cursive;
+}
+
 body {
     margin: 0px;
 }

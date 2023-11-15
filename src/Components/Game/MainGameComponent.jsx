@@ -4,7 +4,7 @@ import { useWorldContext } from "../../State/WorldContextProvider";
 import { useUtilContext } from "../../State/UtilContextProvider";
 import { useNavigate } from "react-router-dom";
 import NewDay from "../../Logic/DayCycle";
-import "../../CSS/MainMenu.css";
+import "../../CSS/index.css";
 import ProfileInfo from "../Game/ProfileInfo";
 import OfferComponent from "./OfferSystem";
 
@@ -22,13 +22,13 @@ export default function MainGameComponent() {
     }
 
     return (
-        <div className="font-medieval Game">
+        <div className="Font-Medieval Game">
             <h1>Game page</h1>
             <button onClick={backToMainMenu}>Return To Main Menu</button>
-            <a>{worldState.day}</a> {/* This component can now access the player level! */}
             <button onClick={() => NewDay(setWorldState)}>Change day</button>
             <ProfileInfo />
             <OfferComponent />
+            <pre>{JSON.stringify(worldState, null, 4)}</pre>
         </div>
     );
 }

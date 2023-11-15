@@ -1,24 +1,37 @@
+import { numItems } from "../Logic/Item"
+
 // This file has all of the starting values for each state
 
 // If you want to add a variable (for example storageSize) to the player, do it here
 
-// This could hold the data related to the player
-export const initialPlayerState = {
+const initialPlayerState = {
     name: "Bruh",
     xp: 0,
     level: 1,
-    money: 0
+    money: 0,
+    inventory: []
 }
 
-// This could hold the data related to the game world outside the player
-export const initialWorldState = {
-    day: 0,
-    weekday: "monday",
+const initialWorldState = {
+    day: 1,
+    weekday: "Monday",
     week: 0,
     unlockedItems : ["apple","wood","rock"]
 }
 
-// This could hold some random utility data if / when needed
-export const initialUtilState = {
+const initialUtilState = {
+    currentUiFocus: "Offers"
+}
 
+export function getInitialPlayerState() {
+    initialPlayerState.inventory = new Array(numItems).fill(0); // initialize the inventory to all zeros
+    return initialPlayerState;
+}
+
+export function getInitialWorldState() {
+    return initialWorldState;
+}
+
+export function getInitialUtilState() {
+    return initialUtilState;
 }
