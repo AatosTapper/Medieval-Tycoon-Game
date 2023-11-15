@@ -1,18 +1,18 @@
 
 export const ITEM = {
-    APPLE: {
+    apple: {
         name: "apple",
-        value: 100,
+        value: 20,
         id: 0,
         image: ""
     },
-    WOOD: {
+    wood: {
         name: "wood",
-        value: 100,
+        value: 50,
         id: 1,
         image: ""
     },
-    ROCK: {
+    rock: {
         name: "rock",
         value: 100,
         id: 2,

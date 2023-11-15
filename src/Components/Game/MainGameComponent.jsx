@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import NewDay from "../../Logic/DayCycle";
 import "../../CSS/MainMenu.css";
 import ProfileInfo from "../Game/ProfileInfo";
+import OfferComponent from "./OfferSystem";
+
 
 // Before looking at this, go to the app component and make sure it makes sense.
 
@@ -26,6 +28,7 @@ export default function MainGameComponent() {
             <a>{worldState.day}</a> {/* This component can now access the player level! */}
             <button onClick={() => NewDay(setWorldState)}>Change day</button>
             <ProfileInfo />
+            <OfferComponent />
         </div>
     );
 }

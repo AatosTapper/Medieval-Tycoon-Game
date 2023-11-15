@@ -14,7 +14,8 @@ export const initialPlayerState = {
 export const initialWorldState = {
     day: 0,
     weekday: "monday",
-    week: 0
+    week: 0,
+    unlockedItems : ["apple","wood","rock"]
 }
 
 // This could hold some random utility data if / when needed
