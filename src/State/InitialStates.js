@@ -16,7 +16,7 @@ const initialPlayerState = {
 const initialWorldState = {
     day: 1,
     weekday: "Monday",
-    week: 0,   
+    week: 0
 }
 
 const initialUtilState = {

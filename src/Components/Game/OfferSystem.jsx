@@ -20,7 +20,7 @@ const OfferComponent = () => {
     
     setRealRandomObject(realRandomObject);
 
-   
+
     setPlayerState({ ...playerState, realRandomObject });
 
     const randomNumber = Math.floor(Math.random() * 10) + 1;

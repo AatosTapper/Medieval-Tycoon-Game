@@ -1,7 +1,11 @@
 import { ITEM, numItems } from "./Item";
 
-const AddItemToInventory = (setPlayerState, item) => {
-
+const AddItemToInventory = (playerState, setPlayerState, item) => {
+    for (const key in ITEM) {
+        if (ITEM[key] === item) {
+            
+        }
+    }
 }
 
 export default AddItemToInventory;
