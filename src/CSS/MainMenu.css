@@ -1,11 +1,35 @@
-.Menu-Title {
-    font-family: Arial, Helvetica, sans-serif;
+.Main-Menu-Title {
+    font-size: 5vw;
+    color: rgb(204, 135, 7);
+
+    width: fit-content;
 }
 
-.font-medieval {
-    font-family: 'MedievalSharp', cursive;
-  }
+.Main-Menu {
+    background-color: rgb(30, 20, 3);
 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
+    height: 100vh;
+}
 
+.Main-Menu-Button {
+    color: rgb(204, 135, 7);
+    display: inline-block;
+    font-size: 3vw;
+    border: 0px;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(30, 20, 3);
+    cursor: pointer;
+    border-radius: 0.1vw;
+    transition: background-color 0.3s, color 0.3s;
+}
 
+.Main-Menu-Button:hover {
+    background-color: rgb(204, 135, 7);
+    color: #f5f5f5; /* White color for text on hover */
+}
