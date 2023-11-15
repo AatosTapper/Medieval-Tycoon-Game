@@ -8,7 +8,7 @@ const initialPlayerState = {
     name: "Bruh",
     xp: 0,
     level: 1,
-    money: 100000,
+    money: 1000,
     inventory: [],
     unlockedItems: ["apple","wood","rock"]
 }
@@ -17,7 +17,20 @@ const initialWorldState = {
     day: 1,
     weekday: "Monday",
     week: 0,
-    currentOffers: [[2, 30, "apple"]]
+    currentOffers: [[2, 30, "apple"]],
+
+    newspaper: {
+        title :'The (shop name) charms the city',
+        text: `A buzz of excitement swept through the city today as a mysterious shop, "The (name of the shop)" unveiled its doors. This magical emporium promises wonders for all who enter.
+
+         welcomes dreamers, adventurers, and seekers of the extraordinary."
+        
+         The shop, shrouded in an air of mystery, invites everyone to discover the magic within.
+        
+        For those craving a touch of the extraordinary, "The (shop name)" is now a beacon of enchantment in our fantastical city.
+        
+        Stay tuned for more enchanting tales from the heart of our mystical realm!`
+    }
 }
 
 const initialUtilState = {
