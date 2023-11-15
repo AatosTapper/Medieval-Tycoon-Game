@@ -23,9 +23,9 @@ export default function MainGameComponent() {
         <div className="Font-Medieval Game">
             <h1>Game page</h1>
             <button onClick={backToMainMenu}>Return To Main Menu</button>
-            <a>{worldState.day}</a> {/* This component can now access the player level! */}
             <button onClick={() => NewDay(setWorldState)}>Change day</button>
             <ProfileInfo />
+            <pre>{JSON.stringify(worldState, null, 4)}</pre>
         </div>
     );
 }
