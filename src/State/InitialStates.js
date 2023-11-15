@@ -9,7 +9,8 @@ const initialPlayerState = {
     xp: 0,
     level: 1,
     money: 0,
-    inventory: []
+    inventory: [],
+    
 }
 
 const initialWorldState = {

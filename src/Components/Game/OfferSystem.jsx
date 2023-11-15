@@ -38,7 +38,7 @@ const OfferComponent = () => {
     <div>
       <button onClick={() => OfferGenerator()}>Create an offer</button>
       
-      {realRandomObject && <p>{realRandomObject.value}</p>}
+      
       <OfferDisplay offers={offers} handleAccept={handleAccept} />
     </div>
   );
