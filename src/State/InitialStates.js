@@ -8,7 +8,7 @@ const initialPlayerState = {
     name: "Bruh",
     xp: 0,
     level: 1,
-    money: 0,
+    money: 100000,
     inventory: [],
     unlockedItems: ["apple","wood","rock"]
 }
@@ -16,7 +16,8 @@ const initialPlayerState = {
 const initialWorldState = {
     day: 1,
     weekday: "Monday",
-    week: 0,   
+    week: 0,
+    currentOffers: [[2, 30, "apple"]]
 }
 
 const initialUtilState = {

@@ -1,25 +1,55 @@
-import React, { useState } from "react";
-//import { ITEM } from "../../Logic/Item";
-//import { usePlayerContext } from "../../State/PlayerContextProvider";
+import { ITEM } from "./Item";
 
-const OfferGenerator = (offers,setOffers) => {
-    const { playerState, setPlayerState } = usePlayerContext()
+const GetWithName = (objectName) => {
+    return ITEM[objectName];
+};
 
+export default function GenerateOffers(worldState, setWorldState, playerState) {
     const randomIndex = Math.floor(Math.random() * playerState.unlockedItems.length);
     const randomObject = playerState.unlockedItems[randomIndex];
     const realRandomObject = GetWithName(randomObject);
-
-    
-    setRealRandomObject(realRandomObject);
-
-   
-    setPlayerState({ ...playerState, realRandomObject });
-
     const randomNumber = Math.floor(Math.random() * 10) + 1;
+    const offer = [randomNumber, randomNumber * realRandomObject.value, realRandomObject.name];
 
-    setOffers(prevState => [...prevState, [randomNumber, randomNumber * realRandomObject.value, realRandomObject.name]]);
-  };
+    setWorldState(oldState => {
+        const newOffers = [...oldState.currentOffers, offer];
+        return {
+            ...oldState,
+            currentOffers: newOffers
+        };
+    });
+};
 
-  
+// TODO: add the offer to the player's inventory
+export function AcceptOffer(worldState, setWorldState, playerState, setPlayerState, index) {
+    const offerCost = worldState.currentOffers[index][1];
+    console.log("Offer cost:", offerCost);
 
-  export default OfferGenerator;
+    if (playerState.money < offerCost) {
+        console.log("Not enough money");
+        return false;
+    }
+
+    setWorldState(oldState => {
+        // Ensure oldState is defined before accessing its properties
+        if (!oldState || !oldState.currentOffers) {
+            console.error("Invalid state or currentOffers is undefined/null");
+            return oldState; // or some default state
+        }
+
+        const newOffers = [...oldState.currentOffers];
+        newOffers.splice(index, 1);
+
+        return {
+            ...oldState,
+            currentOffers: newOffers
+        };
+    });
+
+    setPlayerState(oldState => ({
+        ...oldState,
+        money: oldState.money - offerCost
+    }));
+
+    return true;
+}
