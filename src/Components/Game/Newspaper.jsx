@@ -20,9 +20,8 @@ export const Newspaper = () => {
     return (
         <>
             <p style={newspaperStyle} className="animated bounceInLeft">
-  <StaticMessage />
-  
-</p>
+                <StaticMessage />
+            </p>
         </>
     );
 }

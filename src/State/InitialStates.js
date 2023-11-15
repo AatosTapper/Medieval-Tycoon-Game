@@ -17,8 +17,7 @@ const initialWorldState = {
     day: 1,
     weekday: "Monday",
     week: 0,
-    currentOffers: [[2, 30, "apple"]],
-
+    currentOffers: [[2, 30, "apple", 5]],
     newspaper: {
         title :'The (shop name) charms the city',
         text: `A buzz of excitement swept through the city today as a mysterious shop, "The (name of the shop)" unveiled its doors. This magical emporium promises wonders for all who enter.
