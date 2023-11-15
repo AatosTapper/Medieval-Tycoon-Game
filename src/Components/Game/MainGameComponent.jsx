@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import NewDay from "../../Logic/DayCycle";
 import "../../CSS/index.css";
 import ProfileInfo from "../Game/ProfileInfo";
-import OfferComponent from "./OfferSystem";
+//import OfferComponent from "./OfferSystem";
+import { Newspaper } from "./Newspaper";
 
 
 // Before looking at this, go to the app component and make sure it makes sense.
@@ -24,11 +25,13 @@ export default function MainGameComponent() {
     return (
         <div className="Font-Medieval Game">
             <h1>Game page</h1>
+            
+            <ProfileInfo />
+            
+            <Newspaper />
+            <pre>{JSON.stringify(worldState, null, 4)}</pre>
             <button onClick={backToMainMenu}>Return To Main Menu</button>
             <button onClick={() => NewDay(setWorldState)}>Change day</button>
-            <ProfileInfo />
-            <OfferComponent />
-            <pre>{JSON.stringify(worldState, null, 4)}</pre>
         </div>
     );
 }

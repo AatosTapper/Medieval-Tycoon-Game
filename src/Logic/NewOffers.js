@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ITEM } from "../../Logic/Item";
-import { usePlayerContext } from "../../State/PlayerContextProvider";
+//import { ITEM } from "../../Logic/Item";
+//import { usePlayerContext } from "../../State/PlayerContextProvider";
 
 const OfferGenerator = (offers,setOffers) => {
     const { playerState, setPlayerState } = usePlayerContext()

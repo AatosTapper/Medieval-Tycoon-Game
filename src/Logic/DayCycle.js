@@ -33,7 +33,8 @@ const IncrementDay = (setWorldState) => {
 
 const NewDay = (setWorldState, offers, setOffers) => {
     IncrementDay(setWorldState);
-    OfferGenerator();
+
+    
     
     
 }
