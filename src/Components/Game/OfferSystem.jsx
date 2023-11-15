@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useWorldContext } from "../../State/WorldContextProvider";
 import { ITEM } from "../../Logic/Item";
+import { usePlayerContext } from "../../State/PlayerContextProvider";
 
 const OfferComponent = () => {
-  const { worldState, setWorldState } = useWorldContext();
+  const { playerState, setPlayerState } = usePlayerContext()
   const [offers, setOffers] = useState([[1,20, "apple"], [2, 100, "wood"]]);
   
   const [realRandomObject, setRealRandomObject] = useState(null);
@@ -13,15 +13,15 @@ const OfferComponent = () => {
   };
 
   const OfferGenerator = () => {
-    const randomIndex = Math.floor(Math.random() * worldState.unlockedItems.length);
-    const randomObject = worldState.unlockedItems[randomIndex];
+    const randomIndex = Math.floor(Math.random() * playerState.unlockedItems.length);
+    const randomObject = playerState.unlockedItems[randomIndex];
     const realRandomObject = GetWithName(randomObject);
 
     
     setRealRandomObject(realRandomObject);
 
    
-    setWorldState({ ...worldState, realRandomObject });
+    setPlayerState({ ...playerState, realRandomObject });
 
     const randomNumber = Math.floor(Math.random() * 10) + 1;
 

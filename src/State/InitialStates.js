@@ -10,14 +10,13 @@ const initialPlayerState = {
     level: 1,
     money: 0,
     inventory: [],
-    
+    unlockedItems: ["apple","wood","rock"]
 }
 
 const initialWorldState = {
     day: 1,
     weekday: "Monday",
-    week: 0,
-    unlockedItems : ["apple","wood","rock"]
+    week: 0,   
 }
 
 const initialUtilState = {
