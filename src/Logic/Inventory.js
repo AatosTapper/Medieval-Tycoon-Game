@@ -12,8 +12,6 @@ const AddItemToInventory = (playerState, setPlayerState, itemName, amount) => {
         ...oldState,
         inventory: [...newInventory]
     }));
-
-    console.log(newInventory);
 }
 
 export default AddItemToInventory;

@@ -15,6 +15,7 @@ import { AddNotification } from "../../Logic/NewNotification";
 
 
 import DayCycle from "./DayCycle";
+import Inventory from "./Inventory";
 
 // Before looking at this, go to the app component and make sure it makes sense.
 
@@ -34,8 +35,6 @@ export default function MainGameComponent() {
 
     return (
         <div className="Font-Medieval Game">
-            <h1>Game page</h1>
-            
             <ProfileInfo />
             
             <Newspaper />
@@ -51,10 +50,7 @@ export default function MainGameComponent() {
             <NotificationComponent />
             <OfferComponent />
             <UpgradeComponent />
-            
-            
-            
-            
+            <Inventory />
         </div>
     );
 }

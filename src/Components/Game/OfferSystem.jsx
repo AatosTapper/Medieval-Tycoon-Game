@@ -22,6 +22,7 @@ const OfferDisplay = ({ playerMoney, onAccept }) => {
     const { worldState } = useWorldContext();
 
     return (
+        <div className="Offer-Display-Full">
         <ul>
             {worldState.currentOffers.map((offer, index) => (
                 <li key={index}>
@@ -32,6 +33,7 @@ const OfferDisplay = ({ playerMoney, onAccept }) => {
                 </li>
             ))}
         </ul>
+        </div>
     );
       
 };

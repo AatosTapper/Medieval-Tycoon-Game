@@ -22,3 +22,11 @@ export const ITEM = {
         image: ""
     }
 }
+
+export function GetItemById(id) {
+    for (const key in ITEM) {
+        if (id === ITEM[key].id) {
+            return ITEM[key];
+        }
+    }
+}

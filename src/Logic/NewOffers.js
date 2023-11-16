@@ -32,8 +32,6 @@ export function GenerateOffers(worldState, setWorldState, playerState) {
 
 export function AcceptOffer(worldState, setWorldState, playerState, setPlayerState, index) {
     const offerCost = worldState.currentOffers[index][1];
-    console.log("Offer cost:", offerCost);
-
     // The check for money happens earlier in the component
 
     Transaction(setPlayerState, -offerCost);

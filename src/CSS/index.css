@@ -17,6 +17,11 @@ body {
     background-color: #A1662F;
 }
 
+ul {
+    padding: 0px;
+    list-style-type: none;
+}
+
 .Game {
     margin: 0px;
 }

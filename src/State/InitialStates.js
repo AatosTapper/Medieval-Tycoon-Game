@@ -8,7 +8,7 @@ const initialPlayerState = {
     name: "JoeMama",
     xp: 0,
     level: 1,
-    money: 1000,
+    money: 100000,
     inventory: [],
     unlockedItems: ["apple","wood","rock"],
     skillPoints : 2,
@@ -20,8 +20,6 @@ const initialPlayerState = {
     maintenance : 0,
 
     customersService : 0
-
-    
 }
 
 const initialWorldState = {

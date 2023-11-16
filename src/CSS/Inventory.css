@@ -1,0 +1,62 @@
+.Inventory-Item {
+    background-color: rgb(134, 90, 20);
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    width: 100px;
+    height: 100px;
+}
+
+.Inventory-Item-Image {
+    margin: 0px;
+
+    width: max-content
+}
+
+.Inventory-Item-Name {
+    margin: 0px;
+    font-size: 25px;
+
+    width: 100px;
+}
+
+.Inventory-Item-Amount {
+    margin: 0px;
+    font-size: 15px;
+
+    width: 100px;
+} 
+
+.Inventory-Item-Value {
+    margin: 0px;
+    font-size: 15px;
+
+    width: 100px;
+}
+
+.Inventory-Full {
+    margin: 0px;
+    background-color: rgb(97, 66, 12);
+
+    width: max-content;
+}
+
+.Inventory-Header {
+    margin: 0px;
+    padding: 10px;
+    padding-bottom: 0px;
+
+    width: max-content;
+}
+
+.Inventory-Item-Area {
+    display: flex;
+    margin: 0px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: max-content;
+}
