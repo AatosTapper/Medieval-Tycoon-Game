@@ -1,11 +1,19 @@
 import { ITEM, numItems } from "./Item";
 
-const AddItemToInventory = (playerState, setPlayerState, item) => {
+const AddItemToInventory = (playerState, setPlayerState, itemName, amount) => {
+    let newInventory = [...playerState.inventory];
     for (const key in ITEM) {
-        if (ITEM[key] === item) {
-            // TODO: all
+        if (itemName === ITEM[key].name) {
+            newInventory[ITEM[key].id] += amount;
         }
     }
+
+    setPlayerState(oldState => ({
+        ...oldState,
+        inventory: [...newInventory]
+    }));
+
+    console.log(newInventory);
 }
 
 export default AddItemToInventory;

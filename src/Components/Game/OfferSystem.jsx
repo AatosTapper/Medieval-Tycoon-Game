@@ -2,6 +2,8 @@ import React from "react";
 import { usePlayerContext } from "../../State/PlayerContextProvider";
 import { useWorldContext } from "../../State/WorldContextProvider";
 import { AcceptOffer } from "../../Logic/NewOffers";
+import "../../CSS/OfferPage.css";
+import "../../CSS/Index.css";
 
 const OfferComponent = () => {
     const { playerState, setPlayerState } = usePlayerContext();
@@ -24,7 +26,7 @@ const OfferDisplay = ({ onAccept }) => {
             {worldState.currentOffers.map((offer, index) => (
                 <li key={index}>
                     {`${offer[0]} `} {`${offer[2]} `} for {`${offer[1]} `}
-                    <button onClick={() => onAccept(index)}>Accept</button>
+                    <button className="Button-Accept-Offer Font-Medieval" onClick={() => onAccept(index)}>Accept</button>
                 </li>
             ))}
         </ul>

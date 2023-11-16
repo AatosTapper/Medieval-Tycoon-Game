@@ -1,6 +1,7 @@
 .Profile-Info-Box {
     display: flex;
     flex-direction: column;
+    padding: 0.5vw;
 
     width: min-content;
 }
@@ -20,6 +21,13 @@
 }
 
 #Profile-Info-XP {
+    font-size: medium;
+    width: max-content;
+
+    padding: 0.5vw;
+}
+
+#Profile-Info-Money {
     font-size: medium;
     width: max-content;
 
