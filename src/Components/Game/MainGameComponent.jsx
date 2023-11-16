@@ -4,6 +4,7 @@ import { useWorldContext } from "../../State/WorldContextProvider";
 import { useUtilContext } from "../../State/UtilContextProvider";
 import { useNavigate } from "react-router-dom";
 import NewDay from "../../Logic/DayCycle";
+import "../../CSS/buttons.css";
 import "../../CSS/index.css";
 import ProfileInfo from "../Game/ProfileInfo";
 import { NotificationComponent } from "./NotificationComponent";
@@ -36,19 +37,24 @@ export default function MainGameComponent() {
             <h1>Game page</h1>
             
             <ProfileInfo />
-            <NotificationComponent />
+            
             <Newspaper />
-            <button onClick={backToMainMenu}>Return To Main Menu</button>
+            
+            <button onClick={backToMainMenu} >Return To Main Menu</button>
+            <div className="bottom-right-button">
+            
             <button onClick={nextDay}>Change day</button>
+            </div>
             <button onClick={() => AddNotification(worldState, setWorldState,"Nouvelle notification")}>
                 Ajouter Notification
             </button>
+            <NotificationComponent />
             <OfferComponent />
             <UpgradeComponent />
             
             
             
-            <pre>{JSON.stringify(worldState, null, 4)}</pre>
+            
         </div>
     );
 }

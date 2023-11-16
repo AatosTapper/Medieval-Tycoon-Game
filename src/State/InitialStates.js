@@ -5,7 +5,7 @@ import { numItems } from "../Logic/Item"
 // If you want to add a variable (for example storageSize) to the player, do it here
 
 const initialPlayerState = {
-    name: "Bruh",
+    name: "JoeMama",
     xp: 0,
     level: 1,
     money: 1000,

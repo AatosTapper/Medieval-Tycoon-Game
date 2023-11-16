@@ -1,0 +1,37 @@
+.bottom-right-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    padding: 50px;
+
+    background-image: url('src/images/DayButton.png'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  
+  width: 100px; 
+  height: 40px; 
+  border: none; 
+  image-rendering: pixelated;
+  background-size: contain;
+  }
+
+  .second-button {
+
+       
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    margin: 20px;
+    padding: 50px;
+
+    background-image: url('src/images/DayButton.png'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  
+  width: 100px; 
+  height: 40px; 
+  border: none; 
+  image-rendering: pixelated;
+  background-size: contain;
+  }
