@@ -1,3 +1,4 @@
+import UpdateXpAndLevel from "./LevelUp";
 import { GenerateOffers, UpdateOffers } from "./NewOffers";
 
 const CalcWeek = (days) => Math.floor((days - 1) / 7);
@@ -34,6 +35,7 @@ const IncrementDay = (setWorldState) => {
 
 const NewDay = (worldState, setWorldState, playerState, setPlayerState) => {
     IncrementDay(setWorldState);
+    UpdateXpAndLevel(worldState, setWorldState, playerState, setPlayerState);
     UpdateOffers(setWorldState);
     GenerateOffers(worldState, setWorldState, playerState);
 }
