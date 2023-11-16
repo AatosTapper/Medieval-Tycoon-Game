@@ -1,3 +1,13 @@
 .Button-Accept-Offer {
     margin: 0px;
 }
+
+.Button-Accept-Offer {
+    background-color: lightgray;
+    margin: 0px;
+}
+
+.Button-Accept-Offer-No-Money {
+    background-color: darkslategray;
+    margin: 0px;
+}

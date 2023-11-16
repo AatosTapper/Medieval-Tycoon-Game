@@ -34,10 +34,7 @@ export function AcceptOffer(worldState, setWorldState, playerState, setPlayerSta
     const offerCost = worldState.currentOffers[index][1];
     console.log("Offer cost:", offerCost);
 
-    if (playerState.money < offerCost) {
-        console.log("Not enough money");
-        return false;
-    }
+    // The check for money happens earlier in the component
 
     Transaction(setPlayerState, -offerCost);
     AddItemToInventory(playerState, setPlayerState, worldState.currentOffers[index][2], worldState.currentOffers[index][0]);
