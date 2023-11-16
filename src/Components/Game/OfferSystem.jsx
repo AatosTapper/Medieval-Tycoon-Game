@@ -14,11 +14,11 @@ const OfferComponent = () => {
     };
 
     return (
-        <OfferDisplay onAccept={handleAcceptOffer} />
+        <OfferDisplay playerMoney={playerState.money} onAccept={handleAcceptOffer} />
     );
 }
 
-const OfferDisplay = ({ onAccept }) => {
+const OfferDisplay = ({ playerMoney, onAccept }) => {
     const { worldState } = useWorldContext();
 
     return (
@@ -26,11 +26,14 @@ const OfferDisplay = ({ onAccept }) => {
             {worldState.currentOffers.map((offer, index) => (
                 <li key={index}>
                     {`${offer[0]} `} {`${offer[2]} `} for {`${offer[1]} `}
-                    <button className="Button-Accept-Offer Font-Medieval" onClick={() => onAccept(index)}>Accept</button>
+                    {playerMoney < offer[1] 
+                    ? <button className="Button-Accept-Offer-No-Money Font-Medieval">Accept</button>
+                    : <button className="Button-Accept-Offer Font-Medieval" onClick={() => onAccept(index)}>Accept</button>}
                 </li>
             ))}
         </ul>
     );
+      
 };
 
 export default OfferComponent;
