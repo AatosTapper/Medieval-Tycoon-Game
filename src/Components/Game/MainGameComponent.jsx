@@ -6,9 +6,12 @@ import { useNavigate } from "react-router-dom";
 import NewDay from "../../Logic/DayCycle";
 import "../../CSS/index.css";
 import ProfileInfo from "../Game/ProfileInfo";
+import { NotificationComponent } from "./NotificationComponent";
 import OfferComponent from "./OfferSystem";
 import { Newspaper } from "./Newspaper";
 import { UpgradeComponent } from "./Upgrade";
+import { AddNotification } from "../../Logic/NewNotification";
+
 
 
 // Before looking at this, go to the app component and make sure it makes sense.
@@ -32,12 +35,18 @@ export default function MainGameComponent() {
             <h1>Game page</h1>
             
             <ProfileInfo />
-            
+            <NotificationComponent />
             <Newspaper />
             <button onClick={backToMainMenu}>Return To Main Menu</button>
             <button onClick={nextDay}>Change day</button>
+            <button onClick={() => AddNotification(worldState, setWorldState,"Nouvelle notification")}>
+                Ajouter Notification
+            </button>
             <OfferComponent />
             <UpgradeComponent />
+            
+            
+            
             <pre>{JSON.stringify(worldState, null, 4)}</pre>
         </div>
     );

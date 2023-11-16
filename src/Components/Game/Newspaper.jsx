@@ -3,17 +3,17 @@ import "../../CSS/Newspaper.css";
 import { useWorldContext } from "../../State/WorldContextProvider";
 
 const newspaperStyle = {
-     // Couleur parchemin
-  padding: "60x",
+     
   
   
-   // Coins arrondis
+  
+   paddinRight : "10px",
   display: "inline-block",
   width: "600px",
   height: "600px",
   backgroundImage: "url('src/images/newspaper.png')",
   
-  backgroundSize: "cover", // Pour couvrir l'ensemble de l'élément
+  backgroundSize: "cover", 
   backgroundRepeat: "no-repeat", 
   backgroundPosition: "center bottom", 
   imageRendering: "pixelated", 
