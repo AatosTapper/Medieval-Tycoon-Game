@@ -11,14 +11,13 @@ export const NotificationComponent = () => {
         const updatedNotifications = [...worldState.notification];
         updatedNotifications.splice(index, 1);
 
-       
         setWorldState({ ...worldState, notification: updatedNotifications });
     };
 
     return (
         <>
         <div>
-<ul>
+        <ul>
             {worldState.notification.map((notif, index) => (
                 <li key={index}>
                          {notif} 

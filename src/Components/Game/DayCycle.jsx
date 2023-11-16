@@ -1,28 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { initialPlayerState } from "../../State/InitialStates";
+import React from "react";
+import NewDay from "../../Logic/DayCycle";
+import { usePlayerContext } from "../../State/PlayerContextProvider";
+import { useWorldContext } from "../../State/WorldContextProvider";
 
 export default function DayCycle() {
-    const PassDay = () => {
-        
-        
-        
-      
-      }
-      setPlayerState(oldState => ({
-        ...oldState,
-        day : oldState.day + 1,
-        
-          }
-          ));
-return (
+    const { playerState, setPlayerState } = usePlayerContext();
+    const { worldState, setWorldState } = useWorldContext();
 
-<>
-
-<PassDay />
-<button onClick={PassDay}>  Pass a day ... </button>
-<p>   {initialPlayerState.day}</p>
-</>)
-
+    return ( 
+    <>
+        <button onClick={() => NewDay(worldState, setWorldState, playerState, setPlayerState)}>  Pass a day ... </button>
+    </>
+    )
 }
 
 

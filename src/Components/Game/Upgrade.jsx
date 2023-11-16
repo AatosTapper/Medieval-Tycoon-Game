@@ -5,12 +5,8 @@ export const UpgradeComponent = () => {
     const { playerState, setPlayerState } = usePlayerContext();
     
     return (
-<div>
-<h1>available points : {playerState.skillPoints}</h1>
-
-
-
-</div>
-
-    )
+        <div>
+            <h1>available points : {playerState.skillPoints}</h1>
+        </div>
+    );
 }
