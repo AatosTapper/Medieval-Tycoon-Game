@@ -35,7 +35,7 @@ const Inventory = () => {
                     const amount = playerState.inventory[index];
                     return (
                         amount == 0 
-                        ? <></>
+                        ? <React.Fragment key={index} />
                         : <li key={index}><InventoryItem item={item} amount={amount} /></li>
                     )
                 })}

@@ -7,24 +7,20 @@ import { getInitialPlayerState, getInitialUtilState, getInitialWorldState } from
 import { WorldContextProvider } from './State/WorldContextProvider';
 import { UtilContextProvider } from './State/UtilContextProvider';
 
-// This file is for setting up stuff, so when you start working on the game,
-// go to the MainGameComponent. 
-
 function App() {
-    const [playerState, setPlayerState] = useState(getInitialPlayerState()); // this is the variable that holds player state
+    const [playerState, setPlayerState] = useState(getInitialPlayerState());
     const [worldState, setWorldState] = useState(getInitialWorldState());
     const [utilState, setUtilState] = useState(getInitialUtilState());
 
     return (
         <>
-        {/* These components provide the different game states to the other components to access */}
         <UtilContextProvider value={{ utilState, setUtilState }}>
         <WorldContextProvider value={{ worldState, setWorldState }}>
         <PlayerContextProvider value={{ playerState, setPlayerState }}>
             <Router>
                 <Routes>
                     <Route path="/" exact element={<MainMenuComponent />} />
-                    <Route path="/game" element={<MainGameComponent />} /> {/* So this component and all components inside it can access the state variables */}
+                    <Route path="/game" element={<MainGameComponent />} />
                 </Routes>
             </Router>
         </PlayerContextProvider>

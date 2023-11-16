@@ -3,27 +3,26 @@ import "../../CSS/index.css";
 import "../../CSS/ProfileInfo.css";
 import { usePlayerContext } from "../../State/PlayerContextProvider";
 
+const InfoStyle = {  
+    backgroundImage: "url('src/images/InfoUI.png')",
+
+    backgroundSize: "cover", 
+    backgroundRepeat: "no-repeat", 
+    marginLeft : "20px",
+    imageRendering: "pixelated",    
+    backgroundSize : "contain",
+    padding : "20px",
+    marginBottom : "20px",
+};
+
+const globalText = {  
+    marginLeft : "20px",
+    lineHeight: 1, // Ajustez cette valeur pour l'espacement vertical du texte
+    marginBottom: '10px',
+    
+};
+
 export default function ProfileInfo() {
-
-    const InfoStyle = {  
-        backgroundImage: "url('src/images/InfoUI.png')",
-        
-        backgroundSize: "cover", 
-        backgroundRepeat: "no-repeat", 
-        marginLeft : "20px",
-        imageRendering: "pixelated",    
-        backgroundSize : "contain",
-        padding : "20px",
-        marginBottom : "20px",
-
-        };
-        const globalText = {  
-            marginLeft : "20px",
-            lineHeight: 1, // Ajustez cette valeur pour l'espacement vertical du texte
-            marginBottom: '10px',
-            
-            };
-
     const { playerState, setPlayerState } = usePlayerContext();
 
     return (
@@ -36,19 +35,4 @@ export default function ProfileInfo() {
             </div>
         </div>
     );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
 }

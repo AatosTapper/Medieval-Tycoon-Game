@@ -1,9 +1,7 @@
 import React from "react";
 import { useWorldContext } from "../../State/WorldContextProvider";
-import { usePlayerContext } from "../../State/PlayerContextProvider";
 
 export const NotificationComponent = () => {
-    const { playerState, setPlayerState } = usePlayerContext(); 
     const { worldState, setWorldState } = useWorldContext();
 
     const Delete = (index) => {
@@ -16,7 +14,7 @@ export const NotificationComponent = () => {
 
     return (
         <>
-        <div>
+        <div className="Notification-Center">
         <ul>
             {worldState.notification.map((notif, index) => (
                 <li key={index}>
@@ -27,6 +25,5 @@ export const NotificationComponent = () => {
         </ul>
         </div>
         </>
-    )
+    );
 }
-

@@ -1,4 +1,3 @@
-
 // IMPORTANT: Increment this when you add new items, it is needed for inventory and stuff
 export const numItems = 3; 
 

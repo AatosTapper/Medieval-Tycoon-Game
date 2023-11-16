@@ -8,10 +8,10 @@ export default function DayCycle() {
     const { worldState, setWorldState } = useWorldContext();
 
     return ( 
-    <>
+        <>
         <button onClick={() => NewDay(worldState, setWorldState, playerState, setPlayerState)}>  Pass a day ... </button>
-    </>
-    )
+        </>
+    );
 }
 
 

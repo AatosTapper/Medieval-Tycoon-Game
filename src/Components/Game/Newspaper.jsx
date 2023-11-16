@@ -3,61 +3,43 @@ import "../../CSS/Newspaper.css";
 import { useWorldContext } from "../../State/WorldContextProvider";
 
 const newspaperStyle = {
-     
-  
-  
-  
-   paddinRight : "10px",
-  display: "inline-block",
-  width: "600px",
-  height: "600px",
-  backgroundImage: "url('src/images/newspaper.png')",
-  
-  backgroundSize: "cover", 
-  backgroundRepeat: "no-repeat", 
-  backgroundPosition: "center bottom", 
-  imageRendering: "pixelated", 
+    paddinRight : "10px",
+    display: "inline-block",
+    width: "600px",
+    height: "600px",
+    backgroundImage: "url('src/images/newspaper.png')",
+    
+    backgroundSize: "cover", 
+    backgroundRepeat: "no-repeat", 
+    backgroundPosition: "center bottom", 
+    imageRendering: "pixelated", 
+    marginLeft : "20px"
+};
 
-   
-  
-  
- 
-  
-  
-  marginLeft : "20px"
-  
-  };
-  const titleFontStyle = {
+const titleFontStyle = {
     fontSize: "13px",
     fontWeight: "bold",
     width: "300px",
-  
-  };
-  const gazetteFontStyle = {
+};
+
+const gazetteFontStyle = {
     marginTop : '100px',
     fontSize: "20px",
     fontWeight: "bold",
     width: "300px",
-    
-  
-  };
-  const textFontStyle = {
+};
+
+const textFontStyle = {
     fontSize: "16px",
-    
     width: "300px",
-  
-  };
-  const globalFontStyle = {
+};
+
+const globalFontStyle = {
     marginLeft : "55px",
-    paddinLeft : "30px",
-
-  
-  };
-
-  
+    paddinLeft : "30px",  
+};
 
 export const Newspaper = () => {
-    
     return (
         <>
             <div style={newspaperStyle} className="animated bounceInLeft">
@@ -77,4 +59,3 @@ const StaticMessage = () => {
         </div>
     );
 }
-
