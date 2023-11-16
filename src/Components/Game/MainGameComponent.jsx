@@ -8,6 +8,7 @@ import "../../CSS/index.css";
 import ProfileInfo from "../Game/ProfileInfo";
 import OfferComponent from "./OfferSystem";
 import { Newspaper } from "./Newspaper";
+import { UpgradeComponent } from "./Upgrade";
 
 
 // Before looking at this, go to the app component and make sure it makes sense.
@@ -36,6 +37,7 @@ export default function MainGameComponent() {
             <button onClick={backToMainMenu}>Return To Main Menu</button>
             <button onClick={nextDay}>Change day</button>
             <OfferComponent />
+            <UpgradeComponent />
             <pre>{JSON.stringify(worldState, null, 4)}</pre>
         </div>
     );

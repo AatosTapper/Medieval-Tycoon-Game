@@ -3,17 +3,58 @@ import "../../CSS/Newspaper.css";
 import { useWorldContext } from "../../State/WorldContextProvider";
 
 const newspaperStyle = {
-    border: "2px solid black", // Bordures noires
-  backgroundColor: "#f5e6cc", // Couleur parchemin
-  padding: "10px",
-  borderRadius: "10px", // Coins arrondis
+     // Couleur parchemin
+  padding: "60x",
+  
+  
+   // Coins arrondis
   display: "inline-block",
-  width: "300px",
+  width: "600px",
+  height: "600px",
+  backgroundImage: "url('src/images/newspaper.png')",
+  
+  backgroundSize: "cover", // Pour couvrir l'ensemble de l'élément
+  backgroundRepeat: "no-repeat", 
+  backgroundPosition: "center bottom", 
+  imageRendering: "pixelated", 
+
+   
+  
+  
+ 
+  
+  
+  marginLeft : "20px"
+  
   };
   const titleFontStyle = {
-    fontSize: "16px",
+    fontSize: "13px",
     fontWeight: "bold",
+    width: "300px",
+  
   };
+  const gazetteFontStyle = {
+    marginTop : '100px',
+    fontSize: "20px",
+    fontWeight: "bold",
+    width: "300px",
+    
+  
+  };
+  const textFontStyle = {
+    fontSize: "16px",
+    
+    width: "300px",
+  
+  };
+  const globalFontStyle = {
+    marginLeft : "55px",
+    paddinLeft : "30px",
+
+  
+  };
+
+  
 
 export const Newspaper = () => {
     
@@ -30,10 +71,12 @@ export const Newspaper = () => {
 const StaticMessage = () => {
     const { worldState, setWorldState } = useWorldContext();
     return (
-        <div>
-            <h1> Local Gazette : daily news  </h1>
+        <div >
+            <p style={globalFontStyle} className="Font-Pixel">
+            <h1 style={gazetteFontStyle}> Local Gazette : daily news  </h1>
             <h1 style={titleFontStyle}>    {worldState.newspaper.title}  </h1>
-             <p> {worldState.newspaper.text}  </p>
+             <p style={textFontStyle}> {worldState.newspaper.text}  </p>
+             </p>
         </div>
     );
 }

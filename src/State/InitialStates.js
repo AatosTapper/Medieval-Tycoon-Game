@@ -10,7 +10,18 @@ const initialPlayerState = {
     level: 1,
     money: 1000,
     inventory: [],
-    unlockedItems: ["apple","wood","rock"]
+    unlockedItems: ["apple","wood","rock"],
+    skillPoints : 2,
+
+    storage : 0,
+    offersDay : 0,
+
+    rentabilty : 0,
+    maintenance : 0,
+
+    customersService : 0
+
+    
 }
 
 const initialWorldState = {
@@ -30,7 +41,7 @@ const initialWorldState = {
         For those craving a touch of the extraordinary, "The (shop name)" is now a beacon of enchantment in our fantastical city.
         
         Stay tuned for more enchanting tales from the heart of our mystical realm!`
-    }
+             }
 }
 
 const initialUtilState = {
