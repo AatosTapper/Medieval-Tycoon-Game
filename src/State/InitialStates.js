@@ -8,7 +8,6 @@ const initialPlayerState = {
     name: "Bruh",
     xp: 0,
     level: 1,
-<<<<<<< Updated upstream
     money: 1000,
     inventory: [],
     unlockedItems: ["apple","wood","rock"],
@@ -61,8 +60,4 @@ export function getInitialWorldState() {
 
 export function getInitialUtilState() {
     return initialUtilState;
-=======
-    money: 0,
-    day : 1
->>>>>>> Stashed changes
 }
