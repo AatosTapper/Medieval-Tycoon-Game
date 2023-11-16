@@ -13,6 +13,7 @@ import { UpgradeComponent } from "./Upgrade";
 import { AddNotification } from "../../Logic/NewNotification";
 
 
+import DayCycle from "./DayCycle";
 
 // Before looking at this, go to the app component and make sure it makes sense.
 
