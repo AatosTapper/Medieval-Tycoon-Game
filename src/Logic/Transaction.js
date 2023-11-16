@@ -4,4 +4,4 @@ export default function Transaction(setPlayerState, amount) {
         ...oldState,
         money: oldState.money + amount
     }));
-}
+} 
