@@ -60,9 +60,9 @@ export const Newspaper = () => {
     
     return (
         <>
-            <p style={newspaperStyle} className="animated bounceInLeft">
+            <div style={newspaperStyle} className="animated bounceInLeft">
                 <StaticMessage />
-            </p>
+            </div>
         </>
     );
 }
@@ -70,12 +70,10 @@ export const Newspaper = () => {
 const StaticMessage = () => {
     const { worldState, setWorldState } = useWorldContext();
     return (
-        <div >
-            <p style={globalFontStyle} className="Font-Pixel">
+        <div style={globalFontStyle} className="Font-Pixel">
             <h1 style={gazetteFontStyle}> Local Gazette : daily news  </h1>
             <h1 style={titleFontStyle}>    {worldState.newspaper.title}  </h1>
-             <p style={textFontStyle}> {worldState.newspaper.text}  </p>
-             </p>
+            <p style={textFontStyle}> {worldState.newspaper.text}  </p>
         </div>
     );
 }
