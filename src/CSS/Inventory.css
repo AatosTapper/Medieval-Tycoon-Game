@@ -1,12 +1,12 @@
 .Inventory-Item {
     background-color: rgb(134, 90, 20);
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
     display: flex;
     flex-direction: column;
 
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
 }
 
 .Inventory-Item-Image {
@@ -56,6 +56,7 @@
 .Inventory-Item-Area {
     display: flex;
     margin: 0px;
+    padding: 5px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
