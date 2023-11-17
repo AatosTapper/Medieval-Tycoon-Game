@@ -1,3 +1,4 @@
+import { AddNotification } from "./NewNotification";
 import { AddSkillPoint, AddXp } from "./Transaction";
 
 // just a polynomial for calculating the next xp ceiling
@@ -9,8 +10,9 @@ const calcXpToLevelUp = (level) => {
         + 500);
 }
 
-const LevelUp = (setPlayerState, setWorldState) => {
+const LevelUp = (setPlayerState, setWorldState, level) => {
     // execute all code that needs to be run at levelup in here
+    AddNotification(setWorldState, `Level up to ${level}`);
     AddSkillPoint(setPlayerState, 1);
 }
 
@@ -31,7 +33,7 @@ export default function UpdateXpAndLevel(worldState, setWorldState, playerState,
         xp -= xpToLevelUp;
         level++;
         levelledUp = true;
-        LevelUp(setPlayerState, setWorldState);
+        LevelUp(setPlayerState, setWorldState, level);
         xpToLevelUp = calcXpToLevelUp(level);
     }
 

@@ -44,7 +44,7 @@ export default function MainGameComponent() {
             
             <button onClick={nextDay}>Change day</button>
             </div>
-            <button onClick={() => AddNotification(worldState, setWorldState,"Nouvelle notification")}>
+            <button onClick={() => AddNotification(setWorldState,"Nouvelle notification")}>
                 Ajouter Notification
             </button>
             <NotificationComponent />
