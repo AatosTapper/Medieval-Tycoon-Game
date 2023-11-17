@@ -1,6 +1,6 @@
 import { ITEM, numItems } from "./Item";
 
-const AddItemToInventory = (playerState, setPlayerState, itemName, amount) => {
+export const AddItemToInventory = (playerState, setPlayerState, itemName, amount) => {
     let newInventory = [...playerState.inventory];
     for (const key in ITEM) {
         if (itemName === ITEM[key].name) {
@@ -14,7 +14,7 @@ const AddItemToInventory = (playerState, setPlayerState, itemName, amount) => {
     }));
 }
 
-const TakeItemFromInventory = (playerState, setPlayerState, itemName, amount) => {
+export const TakeItemFromInventory = (playerState, setPlayerState, itemName, amount) => {
     let id = null;
     for (const key in ITEM) {
         if (itemName === ITEM[key].name) {
@@ -28,7 +28,5 @@ const TakeItemFromInventory = (playerState, setPlayerState, itemName, amount) =>
     }
     const numItems = playerState.inventory[id];
     amount = amount >= numItems ? numItems : amount;
-    AddItemToInventory(playerState, setPlayerState, itemName, -amount);
+    AddItemToInventory(playerState, setPlayerState, itemName, -amount); // This is a little bit stupid trick but it works so...
 }
-
-export default { AddItemToInventory, TakeItemFromInventory };

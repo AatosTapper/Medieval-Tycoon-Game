@@ -23,16 +23,17 @@ const OfferDisplay = ({ playerMoney, onAccept }) => {
 
     return (
         <div className="Offer-Display-Full">
-        <ul>
-            {worldState.currentOffers.map((offer, index) => (
-                <li key={index}>
-                    {`${offer[0]} `} {`${offer[2]} `} for {`${offer[1]} `}
-                    {playerMoney < offer[1] 
-                    ? <button className="Button-Accept-Offer-No-Money Font-Medieval">Accept</button>
-                    : <button className="Button-Accept-Offer Font-Medieval" onClick={() => onAccept(index)}>Accept</button>}
-                </li>
-            ))}
-        </ul>
+            <h1>Offers</h1>
+            <ul>
+                {worldState.currentOffers.map((offer, index) => (
+                    <li key={index}>
+                        {`${offer[0]} `} {`${offer[2]} `} for {`${offer[1]} `}
+                        {playerMoney < offer[1] 
+                        ? <button className="Button-Accept-Offer-No-Money Font-Medieval">Accept</button>
+                        : <button className="Button-Accept-Offer Font-Medieval" onClick={() => onAccept(index)}>Accept</button>}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
       

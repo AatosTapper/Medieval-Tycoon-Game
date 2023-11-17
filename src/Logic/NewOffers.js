@@ -1,5 +1,5 @@
 import { ITEM } from "./Item";
-import AddItemToInventory from "./Inventory"
+import { AddItemToInventory } from "./Inventory"
 import Transaction from "./Transaction";
 
 const GetWithName = (objectName) => {

@@ -16,6 +16,7 @@ import { AddNotification } from "../../Logic/NewNotification";
 
 import DayCycle from "./DayCycle";
 import Inventory from "./Inventory";
+import { ViewSwitcher, ViewSelector } from "./ViewSwitcher";
 
 // Before looking at this, go to the app component and make sure it makes sense.
 
@@ -47,10 +48,9 @@ export default function MainGameComponent() {
             <button onClick={() => AddNotification(setWorldState,"Nouvelle notification")}>
                 Ajouter Notification
             </button>
+            <ViewSelector />
             <NotificationComponent />
-            <OfferComponent />
-            <UpgradeComponent />
-            <Inventory />
+            <ViewSwitcher />   
         </div>
     );
 }
