@@ -6,19 +6,19 @@ export const ITEM = {
         name: "apple",
         value: 20,
         id: 0,
-        image: ""
+        image: "src/images/rock.png"
     },
     wood: {
         name: "wood",
         value: 50,
         id: 1,
-        image: ""
+        image: "src/images/log.png"
     },
     rock: {
         name: "rock",
         value: 100,
         id: 2,
-        image: ""
+        image: "src/images/rock.png"
     }
 }
 

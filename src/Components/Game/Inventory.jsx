@@ -4,7 +4,6 @@ import { ITEM, GetItemById } from "../../Logic/Item";
 import "../../CSS/Inventory.css";
 
 const InventoryItem = ({ item, amount }) => {
-    console.log(JSON.stringify(item, null, 4));
     return (
         <div className="Inventory-Item">
             <img className="Inventory-Item-Image" src={item.image}/>
