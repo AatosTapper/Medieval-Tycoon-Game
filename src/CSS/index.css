@@ -14,7 +14,10 @@ font-family: 'Pixelify Sans', sans-serif;
 body {
     margin: 0px;
     height: 100%;
-    background-color: #A1662F;
+    background-image: url('src/images/BackgroundWhite.png'); 
+    background-repeat: repeat;
+    background-size: 270px 270px;;
+    image-rendering: pixelated;
 }
 
 ul {
