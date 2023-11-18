@@ -37,7 +37,7 @@ const initialWorldState = {
 }
 
 const initialUtilState = {
-    currentUiFocus: "Offers"
+    currentUiFocus: "offers"
 }
 
 export function getInitialPlayerState() {

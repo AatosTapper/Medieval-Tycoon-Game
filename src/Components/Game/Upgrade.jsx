@@ -6,7 +6,8 @@ export const UpgradeComponent = () => {
     
     return (
         <div>
-            <h1>available points : {playerState.skillPoints}</h1>
+            <h1>Upgrades</h1>
+            <h1>Available points: {playerState.skillPoints}</h1>
         </div>
     );
 }
