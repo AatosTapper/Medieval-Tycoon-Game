@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePlayerContext } from "../../State/PlayerContextProvider";
 import { useWorldContext } from "../../State/WorldContextProvider";
 import { useUtilContext } from "../../State/UtilContextProvider";
@@ -12,8 +12,6 @@ import OfferComponent from "./OfferSystem";
 import { Newspaper } from "./Newspaper";
 import { UpgradeComponent } from "./Upgrade";
 import { AddNotification } from "../../Logic/NewNotification";
-
-
 import DayCycle from "./DayCycle";
 import Inventory from "./Inventory";
 import { ViewSwitcher, ViewSelector } from "./ViewSwitcher";
@@ -37,7 +35,6 @@ export default function MainGameComponent() {
     return (
         <div className="Font-Medieval Game">
             <ProfileInfo />
-            
             <Newspaper />
             
             <button onClick={backToMainMenu} >Return To Main Menu</button>
