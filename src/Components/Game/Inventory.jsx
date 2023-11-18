@@ -9,7 +9,10 @@ const InventoryItem = ({ item, amount }) => {
             <img className="Inventory-Item-Image" src={item.image}/>
             <p className="Inventory-Item-Amount">{amount}</p>
             <p className="Inventory-Item-Name">{item.name}</p>
-            <p className="Inventory-Item-Value">{item.value}€</p>
+            <div className="Inventory-Item-Value-Box">
+                <img className="Inventory-Item-Coin-Img" src="src/images/coin.png"/>
+                <p className="Inventory-Item-Value">{item.value}€</p>
+            </div>
         </div>
     );
 }
