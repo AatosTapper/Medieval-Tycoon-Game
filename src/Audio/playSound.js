@@ -19,7 +19,7 @@ export const SoundSwitchView = () => {
     const volume = 1.0;
 
     const sound = new Howl({
-        src: [DIR + "viewSelector_1.mp3"],
+        src: [DIR + "upgrade_1.mp3"],
         volume: FX_VOLUME * volume
     })
 
