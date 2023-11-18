@@ -5,6 +5,7 @@ import Inventory from "./Inventory";
 import Shop from "./Shop";
 import { UpgradeComponent } from "./Upgrade";
 import "../../CSS/ViewSwitcher.css";
+import { SoundSwitchView } from "../../Audio/playSound";
 
 const RenderSwitch = (component) => {
     if (component === undefined) {
@@ -66,6 +67,7 @@ export const ViewSelector = () => {
     const { utilState, setUtilState } = useUtilContext();
 
     const SetViewTo = (view) => {
+        SoundSwitchView();
         setUtilState(oldState => ({
             ...oldState,
             currentUiFocus: view
