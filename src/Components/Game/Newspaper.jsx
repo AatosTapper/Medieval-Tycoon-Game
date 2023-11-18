@@ -9,17 +9,19 @@ const newspaperStyle = {
     height: "600px",
     backgroundImage: "url('src/images/newspaper.png')",
     
-    backgroundSize: "cover", 
+    backgroundSize: "cover",
+    backgroundSize: "contain",
     backgroundRepeat: "no-repeat", 
-    backgroundPosition: "center bottom", 
+    
     imageRendering: "pixelated", 
-    marginLeft : "20px"
+    
 };
 
 const titleFontStyle = {
     fontSize: "13px",
     fontWeight: "bold",
     width: "300px",
+    
 };
 
 const gazetteFontStyle = {
@@ -35,7 +37,7 @@ const textFontStyle = {
 };
 
 const globalFontStyle = {
-    marginLeft : "55px",
+    marginLeft : "80px",
     paddinLeft : "30px",  
 };
 

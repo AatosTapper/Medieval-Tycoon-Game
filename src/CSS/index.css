@@ -16,7 +16,7 @@ body {
     height: 100%;
     background-image: url('src/images/BackgroundWhite.png'); 
     background-repeat: repeat;
-    background-size: 270px 270px;;
+    background-size: 270px 270px;
     image-rendering: pixelated;
 }
 
