@@ -1,6 +1,7 @@
 import { ITEM } from "./Item";
 import { AddItemToInventory } from "./Inventory"
 import Transaction from "./Transaction";
+import { SoundAcceptOffer } from "../Audio/playSound";
 
 const GetWithName = (objectName) => {
     return ITEM[objectName];
@@ -34,6 +35,7 @@ export function AcceptOffer(worldState, setWorldState, playerState, setPlayerSta
     const offerCost = worldState.currentOffers[index][1];
     // The check for money happens earlier in the component
 
+    SoundAcceptOffer();
     Transaction(setPlayerState, -offerCost);
     AddItemToInventory(playerState, setPlayerState, worldState.currentOffers[index][2], worldState.currentOffers[index][0]);
 
