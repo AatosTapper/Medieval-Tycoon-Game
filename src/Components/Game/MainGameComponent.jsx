@@ -15,6 +15,7 @@ import { AddNotification } from "../../Logic/NewNotification";
 import DayCycle from "./DayCycle";
 import Inventory from "./Inventory";
 import { ViewSwitcher, ViewSelector } from "./ViewSwitcher";
+import { PlayMusicMain, StopMusicMain } from "../../Audio/playMusic";
 
 // Before looking at this, go to the app component and make sure it makes sense.
 
@@ -23,6 +24,12 @@ export default function MainGameComponent() {
     const { worldState, setWorldState } = useWorldContext();
     const { utilState, setUtilState } = useUtilContext();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        PlayMusicMain();
+
+        return () => StopMusicMain();
+    }, []);
 
     const backToMainMenu = () => {
         navigate("/");

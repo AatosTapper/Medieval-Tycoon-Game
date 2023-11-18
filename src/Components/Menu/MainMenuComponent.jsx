@@ -2,18 +2,12 @@ import React, { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import "../../CSS/MainMenu.css";
 import "../../CSS/index.css";
-import { PlayMusicMain, StopMusicMain } from "../../Audio/playMusic";
 
 export default function MainMenuComponent() {
     const navigate = useNavigate();
 
-    useEffect(() => {
-        StopMusicMain();
-    }, []);
-
     const goToGame = () => {
-        navigate("/game");
-        PlayMusicMain();
+        navigate("/game"); 
     }
 
     return (
