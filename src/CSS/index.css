@@ -4,7 +4,7 @@ put it here.
 */
 
 .Font-Medieval {
-    font-family: 'MedievalSharp', cursive;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 .Font-Pixel {
    
@@ -36,3 +36,22 @@ ul {
     padding: 0px;
     margin: 0px;
 }
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 10px; 
+  }
+
+  .item1 {
+    grid-column: 1;  
+  }
+
+  .item4 {
+    grid-column: 4;  
+  }
+
+  .item23 {
+
+    grid-column: 2 / span 2;
+  }

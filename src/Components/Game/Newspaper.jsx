@@ -5,8 +5,8 @@ import { useWorldContext } from "../../State/WorldContextProvider";
 const newspaperStyle = {
     paddinRight : "10px",
     display: "inline-block",
-    width: "600px",
-    height: "600px",
+    width: "450px",
+    height: "450px",
     backgroundImage: "url('src/images/newspaper.png')",
     
     backgroundSize: "cover",
@@ -18,26 +18,26 @@ const newspaperStyle = {
 };
 
 const titleFontStyle = {
-    fontSize: "13px",
+    fontSize: "10px",
     fontWeight: "bold",
-    width: "300px",
+    width: "250px",
     
 };
 
 const gazetteFontStyle = {
-    marginTop : '100px',
-    fontSize: "20px",
+    marginTop : '50px',
+    fontSize: "17px",
     fontWeight: "bold",
-    width: "300px",
+    width: "250px",
 };
 
 const textFontStyle = {
-    fontSize: "16px",
-    width: "300px",
+    fontSize: "13px",
+    width: "250px",
 };
 
 const globalFontStyle = {
-    marginLeft : "80px",
+    marginLeft : "50px",
     paddinLeft : "30px",  
 };
 

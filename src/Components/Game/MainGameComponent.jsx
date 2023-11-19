@@ -40,21 +40,43 @@ export default function MainGameComponent() {
     }
 
     return (
-        <div className="Font-Medieval Game">
+        <div className="Font-Medieval Game container">
+
+                <div className="item1">
             <ProfileInfo />
             <Newspaper />
+
+            <div style={{ gridColumn: 'span 1', justifySelf: 'end' }}>
+            <ViewSelector />
+           
+            </div>
             
+            </div>
+
+            <div className="item23">
+            <ViewSwitcher />  
+            </div>
+
+           
+            
+            
+           <div className="item4">
+            <NotificationComponent />
+            <button onClick={() => AddNotification(setWorldState,"Nouvelle notification")}>
+                Ajouter Notification
+            </button>
             <button onClick={backToMainMenu} >Return To Main Menu</button>
+           
+            </div>
+
             <div className="bottom-right-button">
             
             <button onClick={nextDay}>Change day</button>
             </div>
-            <button onClick={() => AddNotification(setWorldState,"Nouvelle notification")}>
-                Ajouter Notification
-            </button>
-            <ViewSelector />
-            <NotificationComponent />
-            <ViewSwitcher />   
+
+
+
+
         </div>
     );
 }
