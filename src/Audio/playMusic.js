@@ -4,10 +4,9 @@ const DIR = "AudioFiles/Music/";
 const MUSIC_VOLUME = 0.1;
 
 const audioMainMusic = new Howl({
-    src: [DIR + "MedievalTycoonGameMusicV1.mp3"],
-    volume: MUSIC_VOLUME * 0.7,
+    src: [DIR + "MedievalTycoonGameMusicV2.wav"],
+    volume: MUSIC_VOLUME * 1.0,
     loop: true,
-    html5: true,
     onload: () => {
         // Ensure the music is loaded before attempting to play
         console.log("Music loaded");
@@ -15,7 +14,8 @@ const audioMainMusic = new Howl({
 });
 
 export const PlayMusicMain = () => {
-    //audioMainMusic.play();
+    audioMainMusic.stop();
+    audioMainMusic.play();
 } 
 
 export const StopMusicMain = () => {
