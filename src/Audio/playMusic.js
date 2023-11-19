@@ -15,7 +15,7 @@ const audioMainMusic = new Howl({
 
 export const PlayMusicMain = () => {
     audioMainMusic.stop();
-    audioMainMusic.play();
+    //audioMainMusic.play();
 } 
 
 export const StopMusicMain = () => {
