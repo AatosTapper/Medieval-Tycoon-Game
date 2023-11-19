@@ -6,7 +6,7 @@ export const ITEM = {
         name: "apple",
         value: 20,
         id: 0,
-        image: "src/images/rock.png"
+        image: "src/images/apple.png"
     },
     wood: {
         name: "wood",
