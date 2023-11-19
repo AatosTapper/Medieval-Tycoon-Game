@@ -5,11 +5,11 @@ import { RandGauss } from "./RandGauss";
 // 3 = delta value is one third of the next derivative
 const NEW_DER_FRAC = 3;
 
-const CHAOS = 0.2; // Random offset range
-const INERTIA = 0.05; // How much derivative momentum is conserved
-const INERTIA_RANGE = 0.2; // Random range
+const CHAOS = 0.25; // Random offset range
+const INERTIA = 0.15; // How much derivative momentum is conserved
+const INERTIA_RANGE = 0.05; // Random range
 const MARKET_INFLUENCE = 0.05;
-const MARKET_INFLUENCE_RANGE = 0.15;
+const MARKET_INFLUENCE_RANGE = 0.1;
 
 const calcOffset = (derivative, globalValue) => {
     const negMult = derivative < 0 ? 1.5 : 1.0; // Value goes down more than up

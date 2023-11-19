@@ -37,30 +37,30 @@ const initialWorldState = {
     company: {
         mine: {
             id: 0,
-            value: 1.0,
+            value: 0.0,
             derivative: 0.0
         },
         farm: {
             id: 1,
-            value: 1.0,
+            value: 0.0,
             derivative: 0.0
         },
         wood: {
             id: 2,
-            value: 1.0,
+            value: 0.0,
             derivative: 0.0
         },
         magic: {
             id: 3,
-            value: 1.0,
+            value: 0.0,
             derivative: 0.0
         },
         crafting: {
             id: 4,
-            value: 1.0,
+            value: 0.0,
             derivative: 0.0
         },
-        globalValue: 5.0 // sum of all companies
+        globalValue: 0.0 // sum of all companies
     }
 }
 
