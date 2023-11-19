@@ -33,7 +33,35 @@ const initialWorldState = {
                  For those craving a touch of the extraordinary, "The (shop name)" is now a beacon of enchantment in our fantastical city.
                 Stay tuned for more enchanting tales from the heart of our mystical realm!`
     },
-    notification : ["bonjour","feur"]
+    notification : ["bonjour","feur"],
+    company: {
+        mine: {
+            id: 0,
+            value: 1.0,
+            derivative: 0.0
+        },
+        farm: {
+            id: 1,
+            value: 1.0,
+            derivative: 0.0
+        },
+        wood: {
+            id: 2,
+            value: 1.0,
+            derivative: 0.0
+        },
+        magic: {
+            id: 3,
+            value: 1.0,
+            derivative: 0.0
+        },
+        crafting: {
+            id: 4,
+            value: 1.0,
+            derivative: 0.0
+        },
+        globalValue: 5.0 // sum of all companies
+    }
 }
 
 const initialUtilState = {

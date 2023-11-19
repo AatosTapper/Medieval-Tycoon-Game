@@ -38,7 +38,7 @@ const IncrementDay = (setWorldState) => {
 const NewDay = (worldState, setWorldState, playerState, setPlayerState) => {
     SoundChangeDay();
     IncrementDay(setWorldState);
-    UpdateEconomy(worldState, setWorldState);
+    UpdateEconomy(setWorldState);
     UpdateXpAndLevel(worldState, setWorldState, playerState, setPlayerState);
     UpdateOffers(setWorldState);
     GenerateOffers(worldState, setWorldState, playerState);
