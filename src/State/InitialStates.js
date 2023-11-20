@@ -60,7 +60,7 @@ const initialWorldState = {
             value: 0.0,
             derivative: 0.0
         },
-        globalValue: 0.0 // sum of all companies
+        globalValue: 0.0 // average of all companies
     }
 }
 
