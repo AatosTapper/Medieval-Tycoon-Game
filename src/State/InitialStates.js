@@ -68,7 +68,9 @@ const initialWorldState = {
 }
 
 const initialUtilState = {
-    currentUiFocus: "offers"
+    currentUiFocus: "offers",
+    musicVolume: 1.0,
+    fxVolume: 1.0
 }
 
 export function getInitialPlayerState() {

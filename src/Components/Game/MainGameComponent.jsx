@@ -11,7 +11,8 @@ import { NotificationComponent } from "./NotificationComponent";
 import { Newspaper } from "./Newspaper";
 import { AddNotification } from "../../Logic/NewNotification";
 import { ViewSwitcher, ViewSelector } from "./ViewSwitcher";
-import { PlayMusicMain, StopMusicMain } from "../../Audio/playMusic";
+import { PlayMusicMain, StopMusicMain, UpdateMusicVolume } from "../../Audio/playMusic";
+import { UpdateFXVolume } from "../../Audio/playSound";
 
 
 export default function MainGameComponent() {
@@ -19,6 +20,11 @@ export default function MainGameComponent() {
     const { worldState, setWorldState } = useWorldContext();
     const { utilState, setUtilState } = useUtilContext();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        UpdateMusicVolume(utilState);
+        UpdateFXVolume(utilState);
+    }, [utilState]);
 
     useEffect(() => {
         PlayMusicMain();
@@ -30,48 +36,37 @@ export default function MainGameComponent() {
         navigate("/");
     }
 
+    const toSettings = () => {
+        navigate("/settings");
+    }
+
     const nextDay = () => {
         NewDay(worldState, setWorldState, playerState, setPlayerState);
     }
 
     return (
         <div className="Font-Medieval Game container">
-
-                <div className="item1">
-            <ProfileInfo />
-            <Newspaper />
-
-            <div style={{ gridColumn: 'span 1', justifySelf: 'end' }}>
-            <ViewSelector />
-           
+            <div className="item1">
+                <ProfileInfo />
+                <Newspaper />
+                <div style={{ gridColumn: 'span 1', justifySelf: 'end' }}>
+                    <ViewSelector />
+                </div>
             </div>
-            
-            </div>
-
             <div className="item23">
-            <ViewSwitcher />  
+                <ViewSwitcher />  
             </div>
-
-           
-            
-            
-           <div className="item4">
-            <NotificationComponent />
-            <button onClick={() => AddNotification(setWorldState,"Nouvelle notification")}>
-                Ajouter Notification
-            </button>
-            <button onClick={backToMainMenu} >Return To Main Menu</button>
-           
+            <div className="item4">
+                <NotificationComponent />
+                <button onClick={() => AddNotification(setWorldState,"Nouvelle notification")}>
+                    Add Notification
+                </button>
+                <button onClick={backToMainMenu}>Return To Main Menu</button>
+                <button onClick={toSettings}>Settings</button>
             </div>
-
             <div className="bottom-right-button">
-            
-            <button onClick={nextDay}>Change day</button>
+                <button onClick={nextDay}>Change day</button>
             </div>
-
-
-
-
         </div>
     );
 }

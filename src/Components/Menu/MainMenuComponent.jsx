@@ -10,10 +10,15 @@ export default function MainMenuComponent() {
         navigate("/game"); 
     }
 
+    const goToSettings = () => {
+        navigate("/settings"); 
+    }
+
     return (
         <div className="Font-Medieval Main-Menu">
             <h1 className="Main-Menu-Title">Game Title Here</h1>
             <button onClick={goToGame} className="Main-Menu-Button Font-Medieval">Start Game</button>
+            <button onClick={goToSettings} className="Main-Menu-Button Font-Medieval">Settings</button>
         </div>
     );
 }

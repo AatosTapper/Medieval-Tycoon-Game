@@ -1,17 +1,26 @@
 import {Howl, Howler} from 'howler';
 
 const DIR = "AudioFiles/Music/";
-const MUSIC_VOLUME = 0.1;
+const VOLUME_MULTIPLIER = 0.1;
+let MUSIC_VOLUME = 1.0;
 
 const audioMainMusic = new Howl({
     src: [DIR + "MedievalTycoonGameMusicV2.wav"],
-    volume: MUSIC_VOLUME * 1.0,
+    volume: MUSIC_VOLUME * VOLUME_MULTIPLIER * 1.0,
     loop: true,
     onload: () => {
-        // Ensure the music is loaded before attempting to play
         console.log("Music loaded");
     },
 });
+
+export const UpdateMusicVolume = (state) => {
+    let newVolume = state.musicVolume;
+    newVolume = newVolume < 0 ? 0 : newVolume;
+    newVolume = newVolume > 1 ? 1 : newVolume;
+    MUSIC_VOLUME = newVolume;
+
+    audioMainMusic.volume(MUSIC_VOLUME * VOLUME_MULTIPLIER * 1.0);
+}
 
 export const PlayMusicMain = () => {
     audioMainMusic.stop();

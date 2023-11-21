@@ -6,6 +6,7 @@ import { PlayerContextProvider } from './State/PlayerContextProvider';
 import { getInitialPlayerState, getInitialUtilState, getInitialWorldState } from './State/InitialStates'; // Look inside this file
 import { WorldContextProvider } from './State/WorldContextProvider';
 import { UtilContextProvider } from './State/UtilContextProvider';
+import { MainSettingsComponent } from './Components/Settings/MainSettingsComponent';
 
 function App() {
     const [playerState, setPlayerState] = useState(getInitialPlayerState());
@@ -21,6 +22,7 @@ function App() {
                 <Routes>
                     <Route path="/" exact element={<MainMenuComponent />} />
                     <Route path="/game" element={<MainGameComponent />} />
+                    <Route path="/settings" element={<MainSettingsComponent />} />
                 </Routes>
             </Router>
         </PlayerContextProvider>
