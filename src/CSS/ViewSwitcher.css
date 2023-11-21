@@ -1,10 +1,7 @@
 .View-Switcher-Full {
     background-color: rgb(97, 66, 12);
 
-    width: max-content;
-   
-    
-   
+    width: max-content;  
 }
 
 .View-Selector-Full {
@@ -23,6 +20,6 @@
 }
 
 .View-Selector-Button {
-    
+
     width: max-content;
 }
