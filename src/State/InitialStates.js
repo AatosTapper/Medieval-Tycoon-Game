@@ -33,7 +33,9 @@ const initialWorldState = {
                  For those craving a touch of the extraordinary, "The (shop name)" is now a beacon of enchantment in our fantastical city.
                 Stay tuned for more enchanting tales from the heart of our mystical realm!`
     },
-    notification : ["bonjour","feur"]
+    notification : ["bonjour","feur"],
+
+    sellingItems : [[0,20,3],[1,50,5],[1,50,5]]
 }
 
 const initialUtilState = {

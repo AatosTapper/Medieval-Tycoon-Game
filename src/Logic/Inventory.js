@@ -16,6 +16,7 @@ export const AddItemToInventory = (playerState, setPlayerState, itemName, amount
 
 export const TakeItemFromInventory = (playerState, setPlayerState, itemName, amount) => {
     let id = null;
+    let newInventory = [...playerState.inventory];
     for (const key in ITEM) {
         if (itemName === ITEM[key].name) {
             id = newInventory[ITEM[key].id];
