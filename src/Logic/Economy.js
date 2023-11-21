@@ -8,9 +8,9 @@ const NEW_DER_FRAC = 5;
 const CHAOS = 0.4; // Random offset range
 const INERTIA = 1.1; // How much derivative momentum is conserved
 const INERTIA_RANGE = 0.2; // Random range
-const MARKET_INFLUENCE = 0.05;
+const MARKET_INFLUENCE = 0.02;
 const MARKET_INFLUENCE_RANGE = 0.3;
-const DEVIATION = 3.1; // how far from 0 can value go before market reacts
+const DEVIATION = 10.1; // how far from 0 can value go before market reacts
 const DEVIATION_RANGE = 0.4;
 
 const calcOffset = (derivative, globalValue) => {

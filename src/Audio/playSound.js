@@ -5,24 +5,29 @@ const FX_VOLUME = 0.5;
 
 // Audio Files
 
-const audioUpgrade_1 = new Howl({
-    src: [DIR + "upgrade_1.mp3"],
+const audioAcceptOffer_1 = new Howl({
+    src: [DIR + "Accept_Offer_1.mp3"],
     volume: FX_VOLUME * 1.0
 });
 
 const audioViewSelector_1 = new Howl({
-    src: [DIR + "viewSelector_1.mp3"],
-    volume: FX_VOLUME * 0.9
-})
+    src: [DIR + "View_Selector_1.mp3"],
+    volume: FX_VOLUME * 0.8
+});
+
+const audioLevelUp_1 = new Howl({
+    src: [DIR + "Epic_Level_Up_1.mp3"],
+    volume: FX_VOLUME * 0.4
+});
 
 // Functions
 
 export const SoundUpgrade = () => {
-    audioUpgrade_1.play();
+    audioAcceptOffer_1.play();
 }
 
 export const SoundAcceptOffer = () => {
-    audioUpgrade_1.play();
+    audioAcceptOffer_1.play();
 }
 
 export const SoundSwitchView = () => {
@@ -31,4 +36,9 @@ export const SoundSwitchView = () => {
 
 export const SoundChangeDay = () => {
     audioViewSelector_1.play();
+}
+
+export const SoundLevelUp = () => {
+    audioLevelUp_1.stop();
+    audioLevelUp_1.play();
 }
