@@ -30,12 +30,16 @@ export const TakeItemFromInventory = (playerState, setPlayerState, itemName, amo
     }
 
     const numItems = playerState.inventory[id];
-
-    if (amount > numItems) {
+    console.log(id)
+    console.log(amount)
+    
+    if (amount > id && amount < 1) {
         console.log("Not enough items in inventory.");
         return false;
     }
+    else {
 
     AddItemToInventory(playerState, setPlayerState, itemName, -amount);
     return true;
+}
 };
