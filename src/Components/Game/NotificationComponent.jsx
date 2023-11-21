@@ -39,11 +39,10 @@ export const NotificationComponent = () => {
   return (
     <div style={{ ...dimensions, ...backgroundStyle }}>
       <div style={text}>
-        
         <ul>
           {worldState.notification.map((notif, index) => (
             <li key={index}>
-              {notif} 
+              <p>{notif}</p> {/* I added this <p> tag here so now it should work */}
               <button className="Button-Accept-Offer Font-Medieval" onClick={() => Delete(index)}>Delete</button>
             </li>
           ))}

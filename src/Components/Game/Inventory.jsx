@@ -11,6 +11,7 @@ const InventoryItem = ({ item, amount }) => {
             <p className="Inventory-Item-Name">{item.name}</p>
             <div className="Inventory-Item-Value-Box">
                 <img className="Inventory-Item-Coin-Img" src="src/images/coin.png"/>
+                <img src="src/images/Stonks.png" width={"35px"} height={"15px"}></img>
                 <p className="Inventory-Item-Value">{item.value}€</p>
             </div>
         </div>
