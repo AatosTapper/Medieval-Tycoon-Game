@@ -4,8 +4,9 @@ import { GetItemById } from "./Item";
 export const Sell = (worldState, setWorldState, playerState, setPlayerState, item, price, amount) => {
  
  
-  TakeItemFromInventory(playerState, setPlayerState, GetItemById(item).name, amount)
-  console.log(GetItemById(item).name)
+  const succes = TakeItemFromInventory(playerState, setPlayerState, GetItemById(item).name, amount)
+  console.log(succes)
+  if (succes){
 
 
 
@@ -18,4 +19,13 @@ export const Sell = (worldState, setWorldState, playerState, setPlayerState, ite
       sellingItems: [...prevState.sellingItems, newElement]
     };
   });
+}
+else
+{
+console.log("not enough")
+}
+
+
+
+
 };
