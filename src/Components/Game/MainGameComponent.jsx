@@ -8,16 +8,11 @@ import "../../CSS/buttons.css";
 import "../../CSS/index.css";
 import ProfileInfo from "../Game/ProfileInfo";
 import { NotificationComponent } from "./NotificationComponent";
-import OfferComponent from "./OfferSystem";
 import { Newspaper } from "./Newspaper";
-import { UpgradeComponent } from "./Upgrade";
 import { AddNotification } from "../../Logic/NewNotification";
-import DayCycle from "./DayCycle";
-import Inventory from "./Inventory";
 import { ViewSwitcher, ViewSelector } from "./ViewSwitcher";
 import { PlayMusicMain, StopMusicMain } from "../../Audio/playMusic";
 
-// Before looking at this, go to the app component and make sure it makes sense.
 
 export default function MainGameComponent() {
     const { playerState, setPlayerState } = usePlayerContext();  // with this line of code, this component can access the global player state

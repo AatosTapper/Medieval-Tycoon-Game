@@ -35,7 +35,36 @@ const initialWorldState = {
     },
     notification : ["bonjour","feur"],
 
-    sellingItems : [[0,20,3],[1,50,5],[1,50,5]]
+    sellingItems : [[0,20,3],[1,50,5],[1,50,5]],
+    
+    company: {
+        mine: {
+            id: 0,
+            value: 0.0,
+            derivative: 0.0
+        },
+        farm: {
+            id: 1,
+            value: 0.0,
+            derivative: 0.0
+        },
+        wood: {
+            id: 2,
+            value: 0.0,
+            derivative: 0.0
+        },
+        magic: {
+            id: 3,
+            value: 0.0,
+            derivative: 0.0
+        },
+        crafting: {
+            id: 4,
+            value: 0.0,
+            derivative: 0.0
+        },
+        globalValue: 0.0 // average of all companies
+    }
 }
 
 const initialUtilState = {

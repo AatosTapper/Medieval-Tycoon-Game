@@ -1,4 +1,5 @@
 import { SoundChangeDay } from "../Audio/playSound";
+import { UpdateEconomy } from "./Economy";
 import UpdateXpAndLevel from "./LevelUp";
 import { GenerateOffers, UpdateOffers } from "./NewOffers";
 
@@ -37,6 +38,7 @@ const IncrementDay = (setWorldState) => {
 const NewDay = (worldState, setWorldState, playerState, setPlayerState) => {
     SoundChangeDay();
     IncrementDay(setWorldState);
+    UpdateEconomy(setWorldState);
     UpdateXpAndLevel(worldState, setWorldState, playerState, setPlayerState);
     UpdateOffers(setWorldState);
     GenerateOffers(worldState, setWorldState, playerState);
