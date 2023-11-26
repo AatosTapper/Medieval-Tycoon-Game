@@ -36,6 +36,22 @@ const initialWorldState = {
     notification : ["bonjour","feur"],
 
     sellingItems : [[0,20,3],[1,50,5],[1,50,5]],
+
+    currentCustomers : [["George", 7,"mine",10],["Donald",3,"farm",15]],
+
+    //For the names I check some medieval english names but You can add some more if you want ! 
+    possibleNames : [ "Alfred", "Edith", "Eadric", "Aelfric", "Aethelred", 
+    "Cenric", "Wulfric", "Ealdgyth", "Godric", "Aldred", 
+    "Leofric", "Wulfhild", "Ethelbert", "Cyneburg", "Cuthbert", 
+    "Aeliana", "Leofwine", "Aethelflaed", "Egbert", 
+    "Aldwyn", "Ealhswith", "Aldhelm", "Wynflaed", "Ethelburg", 
+    "Leofsige", "Wynsige", "Ealdred", "Eadgyth", "Leofwynn", 
+    "Wynstan", "Aelfweard", "Eadburh", "Ceolmund", "Ailwin", 
+    "Eadgifu", "Wynstan", "Aethelgifu", "Leofric", "Eadwyn", 
+    "Aldgyth", "Wynburga", "Aethelwine", "Ealdgyth", "Leofgifu", 
+    "Wynflaed", "Aelwig", "Eadred", "Leofstan", "Wynna", ],
+
+    possiblePreferences : ["farm","mine","wood","magic","crafting"],
     
     company: {
         mine: {
@@ -70,7 +86,7 @@ const initialWorldState = {
 const initialUtilState = {
     currentUiFocus: "offers",
     musicVolume: 1.0,
-    fxVolume: 1.0
+    fxVolume: 1.0,
 }
 
 export function getInitialPlayerState() {

@@ -3,6 +3,7 @@ import { UpdateEconomy } from "./Economy";
 import UpdateXpAndLevel from "./LevelUp";
 import { GenerateOffers, UpdateOffers } from "./NewOffers";
 
+
 const CalcWeek = (days) => Math.floor((days - 1) / 7);
 
 const GetWeekday = (day) => {
@@ -43,6 +44,7 @@ const NewDay = (worldState, setWorldState, playerState, setPlayerState) => {
     UpdateXpAndLevel(worldState, setWorldState, playerState, setPlayerState);
     UpdateOffers(setWorldState);
     GenerateOffers(worldState, setWorldState, playerState);
+    
 }
 
 export default NewDay;

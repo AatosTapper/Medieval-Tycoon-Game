@@ -4,6 +4,8 @@ import { useWorldContext } from "../../State/WorldContextProvider";
 import { GetItemById } from "../../Logic/Item";
 import { Sell } from "../../Logic/Sell";
 import { TakeItemFromInventory } from "../../Logic/Inventory";
+import { GenerateClient } from "../../Logic/Clients";
+import { clearCurrentCustomers } from "../../Logic/Clients";
 
 const Shop = () => {
   const { playerState, setPlayerState } = usePlayerContext();
@@ -44,12 +46,26 @@ const Shop = () => {
         {worldState.sellingItems.map((item, index) => (
           <li key={index}>
             {"name: " + GetItemById(item[0]).name + "  "}
-            {"price: " + item[1] + "  "}
+            {"price: " + item[1] + " "}
             {"amount: " + item[2] + " "}
           </li>
         ))}
       </ul>
+      <ul>
+      {worldState.currentCustomers.map((item, index) => (
+          <li key={index}>
+            {"name : " + item[0] + "        "}
+            {"     wealth : " + item[1] + "      "}
+            {"     preferences : " + item[2]}
+          </li>
+       
+        ))}
+      </ul>
+      <button onClick={()=> GenerateClient(worldState,setWorldState)}> add client </button>
+      <button onClick={()=> clearCurrentCustomers(setWorldState)}> clear clients </button>
     </div>
+
+
   );
 };
 
