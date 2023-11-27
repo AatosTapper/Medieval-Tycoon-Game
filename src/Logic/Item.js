@@ -1,5 +1,3 @@
-// IMPORTANT: Increment this when you add new items, it is needed for inventory and stuff
-export const numItems = 3; 
 
 export const ITEM = {
     apple: {
@@ -22,10 +20,21 @@ export const ITEM = {
     }
 }
 
+// IMPORTANT: Put the item value to the list in world state
+// IMPORTANT: Increment this when you add new items, it is needed for inventory and stuff
+export const numItems = 3; 
+
 export function GetItemById(id) {
     for (const key in ITEM) {
         if (id === ITEM[key].id) {
             return ITEM[key];
         }
+    }
+}
+
+export const SetItemValues = (worldState) => {
+    for (let i = 0; i < numItems; i++) {
+        let item = GetItemById(i);
+        item.value = worldState.itemValues[i];
     }
 }

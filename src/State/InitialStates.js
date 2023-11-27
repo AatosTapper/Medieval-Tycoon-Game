@@ -3,6 +3,7 @@ import { numItems } from "../Logic/Item"
 // This file has all of the starting values for each state
 
 const initialPlayerState = {
+    stateId: 0,
     name: "JoeMama",
     xp: 0,
     level: 1,
@@ -21,6 +22,7 @@ const initialPlayerState = {
 }
 
 const initialWorldState = {
+    stateId: 1,
     day: 1,
     weekday: "Monday",
     week: 0,
@@ -70,10 +72,13 @@ const initialWorldState = {
             derivative: 0.0
         },
         globalValue: 0.0 // average of all companies
-    }
+    },
+
+    itemValues: [20, 50, 100]
 }
 
 const initialUtilState = {
+    stateId: 2,
     currentUiFocus: "offers",
     musicVolume: 1.0,
     fxVolume: 1.0,

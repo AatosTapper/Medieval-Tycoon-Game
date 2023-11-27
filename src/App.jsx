@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainGameComponent from './Components/Game/MainGameComponent';
 import MainMenuComponent from './Components/Menu/MainMenuComponent';
 import { PlayerContextProvider } from './State/PlayerContextProvider';
-import { getInitialPlayerState, getInitialUtilState, getInitialWorldState } from './State/InitialStates'; // Look inside this file
 import { WorldContextProvider } from './State/WorldContextProvider';
 import { UtilContextProvider } from './State/UtilContextProvider';
 import { MainSettingsComponent } from './Components/Settings/MainSettingsComponent';
+import { getInitialPlayerState, getInitialUtilState, getInitialWorldState } from './State/InitialStates';
 
 function App() {
     const [playerState, setPlayerState] = useState(getInitialPlayerState());
     const [worldState, setWorldState] = useState(getInitialWorldState());
     const [utilState, setUtilState] = useState(getInitialUtilState());
+
+    useEffect(() => {
+
+    }, []);
 
     return (
         <>
