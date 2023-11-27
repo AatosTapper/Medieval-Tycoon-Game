@@ -40,8 +40,8 @@ export default function MainGameComponent() {
         navigate("/settings");
     }
 
-    const nextDay = () => {
-        NewDay(worldState, setWorldState, playerState, setPlayerState);
+    const nextDay = async () => {
+        await NewDay(worldState, setWorldState, playerState, setPlayerState, utilState);
     }
 
     return (

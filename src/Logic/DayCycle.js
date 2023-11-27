@@ -1,5 +1,6 @@
 import { SoundChangeDay, SoundLevelUp } from "../Audio/playSound";
 import { UpdateEconomy } from "./Economy";
+import { SetItemValues } from "./Item";
 import UpdateXpAndLevel from "./LevelUp";
 import { GenerateOffers, UpdateOffers } from "./NewOffers";
 
@@ -36,7 +37,7 @@ const IncrementDay = (setWorldState) => {
     }));
 }
 
-const NewDay = (worldState, setWorldState, playerState, setPlayerState) => {
+const NewDay = async (worldState, setWorldState, playerState, setPlayerState, utilState) => {
     //SoundChangeDay();
     SoundLevelUp();
     IncrementDay(setWorldState);
@@ -44,7 +45,7 @@ const NewDay = (worldState, setWorldState, playerState, setPlayerState) => {
     UpdateXpAndLevel(worldState, setWorldState, playerState, setPlayerState);
     UpdateOffers(setWorldState);
     GenerateOffers(worldState, setWorldState, playerState);
-    
+    SetItemValues(worldState);
 }
 
 export default NewDay;
