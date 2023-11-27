@@ -4,8 +4,10 @@ import { useWorldContext } from "../../State/WorldContextProvider";
 import { GetItemById } from "../../Logic/Item";
 import { Sell } from "../../Logic/Sell";
 import { TakeItemFromInventory } from "../../Logic/Inventory";
-import { GenerateClient } from "../../Logic/Clients";
+import { GenerateClient, UpdateCustomers } from "../../Logic/Clients";
 import { clearCurrentCustomers } from "../../Logic/Clients";
+import { useEffect } from "react";
+
 
 const Shop = () => {
   const { playerState, setPlayerState } = usePlayerContext();
@@ -28,6 +30,28 @@ const Shop = () => {
   const handleAmountChange = (event) => {
     setAmount(Number(event.target.value) || 0);
   };
+
+  
+  // Shop GAMELOOP
+  const updateIntervalMS = 1000;
+  useEffect(() => {
+    if ( worldState.openShop == false ){return false}
+
+    
+      const interval = setInterval(() => {
+          console.log("test")
+          UpdateCustomers(worldState,setWorldState)
+        
+      }, updateIntervalMS);
+      return () => clearInterval(interval);
+    
+  },[worldState.openShop]);
+ 
+
+  
+
+  
+
 
   return (
     <div>
@@ -67,6 +91,7 @@ const Shop = () => {
 
 
   );
+  
 };
 
 export default Shop;

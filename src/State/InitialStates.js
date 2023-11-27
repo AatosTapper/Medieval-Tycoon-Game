@@ -39,19 +39,9 @@ const initialWorldState = {
 
     currentCustomers : [["George", 7,"mine",10],["Donald",3,"farm",15]],
 
-    //For the names I check some medieval english names but You can add some more if you want ! 
-    possibleNames : [ "Alfred", "Edith", "Eadric", "Aelfric", "Aethelred", 
-    "Cenric", "Wulfric", "Ealdgyth", "Godric", "Aldred", 
-    "Leofric", "Wulfhild", "Ethelbert", "Cyneburg", "Cuthbert", 
-    "Aeliana", "Leofwine", "Aethelflaed", "Egbert", 
-    "Aldwyn", "Ealhswith", "Aldhelm", "Wynflaed", "Ethelburg", 
-    "Leofsige", "Wynsige", "Ealdred", "Eadgyth", "Leofwynn", 
-    "Wynstan", "Aelfweard", "Eadburh", "Ceolmund", "Ailwin", 
-    "Eadgifu", "Wynstan", "Aethelgifu", "Leofric", "Eadwyn", 
-    "Aldgyth", "Wynburga", "Aethelwine", "Ealdgyth", "Leofgifu", 
-    "Wynflaed", "Aelwig", "Eadred", "Leofstan", "Wynna", ],
-
     possiblePreferences : ["farm","mine","wood","magic","crafting"],
+
+    openShop : true,
     
     company: {
         mine: {
