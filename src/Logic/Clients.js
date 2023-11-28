@@ -59,7 +59,7 @@ export const GenerateClient = (worldState,setWorldState) => {
       }
       customers[i][3] -= 1;
 
-      console.log(customers[i][3]) 
+      
   
     }
     setWorldState(oldState => ( {

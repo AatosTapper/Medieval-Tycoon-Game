@@ -7,6 +7,7 @@ import { TakeItemFromInventory } from "../../Logic/Inventory";
 import { GenerateClient, UpdateCustomers } from "../../Logic/Clients";
 import { clearCurrentCustomers } from "../../Logic/Clients";
 import { useEffect } from "react";
+import { Buy } from "../../Logic/Buying";
 
 
 const Shop = () => {
@@ -41,6 +42,7 @@ const Shop = () => {
       const interval = setInterval(() => {
           console.log("test")
           UpdateCustomers(worldState,setWorldState)
+          Buy(worldState,setWorldState,playerState, setPlayerState)
         
       }, updateIntervalMS);
       return () => clearInterval(interval);
