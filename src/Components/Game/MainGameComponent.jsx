@@ -13,6 +13,7 @@ import { AddNotification } from "../../Logic/NewNotification";
 import { ViewSwitcher, ViewSelector } from "./ViewSwitcher";
 import { PlayMusicMain, StopMusicMain, UpdateMusicVolume } from "../../Audio/playMusic";
 import { UpdateFXVolume } from "../../Audio/playSound";
+import { openTheShop } from "../../Logic/Buying";
 
 
 export default function MainGameComponent() {
@@ -66,6 +67,11 @@ export default function MainGameComponent() {
             </div>
             <div className="bottom-right-button">
                 <button onClick={nextDay}>Change day</button>
+                
+                
+            </div>
+            <div className="second-button">
+                <button onClick={() => openTheShop(setWorldState)}>Open the shop </button>
             </div>
         </div>
     );

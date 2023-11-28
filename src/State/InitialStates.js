@@ -43,7 +43,7 @@ const initialWorldState = {
 
     possiblePreferences : ["farm","mine","wood","magic","crafting"],
 
-    openShop : true,
+    openShop : false,
     
     company: {
         mine: {
