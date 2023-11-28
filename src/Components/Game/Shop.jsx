@@ -20,7 +20,6 @@ const Shop = () => {
     const [amount, setAmount] = useState(1);
 
     const handleItemChange = (event) => {
-    
         setItem(parseInt(event.target.value, 10) || 0);
     };
 
@@ -34,21 +33,20 @@ const Shop = () => {
 
   
     // Shop GAMELOOP
-    const updateIntervalMS = 1000;
+    const updateIntervalMS = 500;
     useEffect(() => {
-        if ( worldState.openShop == false ){return false}
+        if ( worldState.openShop == false ){ return; }
+
         const interval = setInterval( async () => {
-            console.log("test")
             await UpdateCustomers(worldState,setWorldState)
             Buy(worldState,setWorldState,playerState, setPlayerState)
         }, updateIntervalMS);
+
         return () => clearInterval(interval);
     },[worldState.openShop]);
 
-    for (let i = 0 ; i < worldState.sellingItems.length; i++)
-        {
-        if (worldState.sellingItems[i][2]==0)
-        {
+    for (let i = 0 ; i < worldState.sellingItems.length; i++) {
+        if (worldState.sellingItems[i][2]==0) {
             const newList = [...worldState.sellingItems];
             newList.splice([i],1);
             setWorldState({ ...worldState, sellingItems: newList });
@@ -87,8 +85,8 @@ const Shop = () => {
             
                 ))}
             </ul>
-            <button onClick={()=> GenerateClient(worldState,setWorldState)}> add client </button>
-            <button onClick={()=> clearCurrentCustomers(setWorldState)}> clear clients </button>
+            <button onClick={() => GenerateClient(worldState)}> add client </button>
+            <button onClick={()=> clearCurrentCustomers()}> clear clients </button>
         </div>
     );
 };

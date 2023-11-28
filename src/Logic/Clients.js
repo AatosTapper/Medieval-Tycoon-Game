@@ -1,4 +1,6 @@
-export const GenerateClient = (worldState,setWorldState) => {
+let currentCustomers = null;
+
+export const GenerateClient = (worldState) => {
     //For the names I check some medieval english names but You can add some more if you want ! 
     const possibleNames = [ "Alfred", "Edith", "Eadric", "Aelfric", "Aethelred", 
     "Cenric", "Wulfric", "Ealdgyth", "Godric", "Aldred", 
@@ -20,29 +22,24 @@ export const GenerateClient = (worldState,setWorldState) => {
     
     const randomPreference = worldState.possiblePreferences[preferencesIndex];
 
-    const nouveauClient = [randomName, wealth, randomPreference, randomTime];
-    
+    const newClient = [randomName, wealth, randomPreference, randomTime];
     const newList = [...worldState.currentCustomers];
-    
-    newList.push(nouveauClient);
-  
-    setWorldState((prevState) => {
-        return {
-        ...prevState,
-        currentCustomers: newList,
-    }});
+    newList.push(newClient);
+
+    currentCustomers = newList;
 };
 
-export const clearCurrentCustomers = (setWorldState) => {   
-    setWorldState((prevState) => ({
-      ...prevState,
-      currentCustomers: [],
-    }));
+export const clearCurrentCustomers = () => {   
+    currentCustomers = [];
 };
 
 export const UpdateCustomers = async (worldState, setWorldState) => {
     return new Promise((resolve, reject) => {
         let customers = worldState.currentCustomers;
+        if (currentCustomers !== null) {
+            customers = currentCustomers;
+        }
+        
         for (let i = 0; i < customers.length; i++)
         {
             if (customers[i][3] <= 0)
