@@ -3,8 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useUtilContext } from "../../State/UtilContextProvider";
 import { UpdateFXVolume } from "../../Audio/playSound";
 import { UpdateMusicVolume } from "../../Audio/playMusic";
+import { DeleteStorage, OpenStorage } from "../../Save/db";
+import { usePlayerContext } from "../../State/PlayerContextProvider";
+import { useWorldContext } from "../../State/WorldContextProvider";
 
 export const MainSettingsComponent = ({lastPage}) => {
+    const { playerState, setPlayerState } = usePlayerContext();
+    const { worldState, setWorldState } = useWorldContext();
     const { utilState, setUtilState } = useUtilContext();
     const navigate = useNavigate();
 
@@ -14,6 +19,12 @@ export const MainSettingsComponent = ({lastPage}) => {
 
     const toGame = () => {
         navigate("/game"); 
+    }
+
+    const deleteSave = () => {
+        navigate("/");
+        DeleteStorage();
+        OpenStorage(setPlayerState, setWorldState, setUtilState);
     }
 
     const setMusicVolume = (event) => {
@@ -53,6 +64,7 @@ export const MainSettingsComponent = ({lastPage}) => {
             </label>
             <button onClick={toGame}>To Game</button>
             <button onClick={toMenu}>To Menu</button>
+            <button onClick={deleteSave}>Delete Save</button>
         </div>
     )
 }

@@ -1,69 +1,41 @@
-// Open or create the database
-const openDB = indexedDB.open('MyDatabase', 1);
+import { getInitialPlayerState, getInitialUtilState, getInitialWorldState } from "../State/InitialStates";
 
-// Define the object store structure
-openDB.onupgradeneeded = function(event) {
-    const db = event.target.result;
+const PLAYER_ADDRESS = "PlayerStorage";
+const WORLD_ADDRESS = "WorldStorage";
+const UTIL_ADDRESS = "UtilStorage";
 
-    // Create an object store with an auto-incrementing key
-    const objectStore = db.createObjectStore('myObjectStore', { keyPath: 'id', autoIncrement: true });
+export const OpenStorage = (setPlayerState, setWorldState, setUtilState) => {
+    let playerStorage = localStorage.getItem(PLAYER_ADDRESS);
+    let worldStorage = localStorage.getItem(WORLD_ADDRESS);
+    let UtilStorage = localStorage.getItem(UTIL_ADDRESS);
 
-    // Define the object store schema (assuming your three.js objects have properties 'id', 'name', 'color')
-    objectStore.createIndex('name', 'name', { unique: false });
-    objectStore.createIndex('color', 'color', { unique: false });
-};
+    if ((playerStorage === null) || (worldStorage === null) || (UtilStorage === null)) {
+        localStorage.setItem(PLAYER_ADDRESS, JSON.stringify(getInitialPlayerState()));
+        localStorage.setItem(WORLD_ADDRESS, JSON.stringify(getInitialWorldState()));
+        localStorage.setItem(UTIL_ADDRESS, JSON.stringify(getInitialUtilState()));
 
-// Handle errors
-openDB.onerror = function(event) {
-    console.error('Error opening database:', event.target.errorCode);
-};
-
-// Handle successful database creation or opening
-openDB.onsuccess = function(event) {
-    const db = event.target.result;
-
-    // Save a new version of the object
-    function saveObject(object, callback) {
-        const transaction = db.transaction(['myObjectStore'], 'readwrite');
-        const objectStore = transaction.objectStore('myObjectStore');
-
-        const request = objectStore.add(object);
-
-        request.onsuccess = function() {
-        console.log('Object saved successfully');
-        if (callback) callback();
-        };
-
-        request.onerror = function(event) {
-        console.error('Error saving object:', event.target.errorCode);
-        };
+        playerStorage = localStorage.getItem(PLAYER_ADDRESS);
+        worldStorage = localStorage.getItem(WORLD_ADDRESS);
+        UtilStorage = localStorage.getItem(UTIL_ADDRESS);
     }
 
-    // Fetch all saved versions of the object
-    function fetchObjects(callback) {
-        const transaction = db.transaction(['myObjectStore'], 'readonly');
-        const objectStore = transaction.objectStore('myObjectStore');
+    setPlayerState(JSON.parse(playerStorage));
+    setWorldState(JSON.parse(worldStorage));
+    setUtilState(JSON.parse(UtilStorage));
+}
 
-        const request = objectStore.getAll();
+export const DeleteStorage = () => {
+    localStorage.clear();
+}
 
-        request.onsuccess = function(event) {
-        const objects = event.target.result;
-        console.log('Fetched objects:', objects);
-        if (callback) callback(objects);
-        };
+export const SaveToStorage = (playerState, worldState, utilState, setUtilState) => {
+    setUtilState(oldState => {
+        return {
+        ...oldState,
+        isNewSave: false
+    }});
 
-        request.onerror = function(event) {
-        console.error('Error fetching objects:', event.target.errorCode);
-        };
-    }
-
-    // Example usage:
-    const exampleObject = { name: 'Example', color: 'Red' };
-
-    saveObject(exampleObject, function() {
-        fetchObjects(function(objects) {
-            // Do something with the fetched objects
-            console.log('Fetched objects:', objects);
-        });
-    });
-};
+    localStorage.setItem(PLAYER_ADDRESS, JSON.stringify(playerState));
+    localStorage.setItem(WORLD_ADDRESS, JSON.stringify(worldState));
+    localStorage.setItem(UTIL_ADDRESS, JSON.stringify(utilState));
+}

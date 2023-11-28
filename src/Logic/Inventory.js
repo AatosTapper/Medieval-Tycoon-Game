@@ -38,8 +38,7 @@ export const TakeItemFromInventory = (playerState, setPlayerState, itemName, amo
         return false;
     }
     else {
-
-    AddItemToInventory(playerState, setPlayerState, itemName, -amount);
-    return true;
-}
+        AddItemToInventory(playerState, setPlayerState, itemName, -amount);
+        return true;
+    }
 };
