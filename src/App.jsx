@@ -13,10 +13,6 @@ function App() {
     const [worldState, setWorldState] = useState(getInitialWorldState());
     const [utilState, setUtilState] = useState(getInitialUtilState());
 
-    useEffect(() => {
-
-    }, []);
-
     return (
         <>
         <UtilContextProvider value={{ utilState, setUtilState }}>

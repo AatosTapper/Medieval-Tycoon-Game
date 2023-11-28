@@ -13,10 +13,11 @@ import { AddNotification } from "../../Logic/NewNotification";
 import { ViewSwitcher, ViewSelector } from "./ViewSwitcher";
 import { PlayMusicMain, StopMusicMain, UpdateMusicVolume } from "../../Audio/playMusic";
 import { UpdateFXVolume } from "../../Audio/playSound";
+import { SaveToStorage } from "../../Save/db";
 
 
 export default function MainGameComponent() {
-    const { playerState, setPlayerState } = usePlayerContext();  // with this line of code, this component can access the global player state
+    const { playerState, setPlayerState } = usePlayerContext();
     const { worldState, setWorldState } = useWorldContext();
     const { utilState, setUtilState } = useUtilContext();
     const navigate = useNavigate();
@@ -33,6 +34,7 @@ export default function MainGameComponent() {
     }, []);
 
     const backToMainMenu = () => {
+        SaveToStorage(playerState, worldState, utilState, setUtilState);
         navigate("/");
     }
 
@@ -41,7 +43,7 @@ export default function MainGameComponent() {
     }
 
     const nextDay = async () => {
-        await NewDay(worldState, setWorldState, playerState, setPlayerState, utilState);
+        await NewDay(worldState, setWorldState, playerState, setPlayerState, utilState, setUtilState);
     }
 
     return (
@@ -61,7 +63,7 @@ export default function MainGameComponent() {
                 <button onClick={() => AddNotification(setWorldState,"Nouvelle notification")}>
                     Add Notification
                 </button>
-                <button onClick={backToMainMenu}>Return To Main Menu</button>
+                <button onClick={backToMainMenu}>Save And Exit</button>
                 <button onClick={toSettings}>Settings</button>
             </div>
             <div className="bottom-right-button">

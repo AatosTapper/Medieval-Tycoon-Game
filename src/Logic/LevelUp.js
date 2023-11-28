@@ -1,7 +1,8 @@
+import { SoundLevelUp } from "../Audio/playSound";
 import { AddNotification } from "./NewNotification";
 import { AddSkillPoint, AddXp } from "./Transaction";
 
-// just a polynomial for calculating the next xp ceiling
+// TODO: find a good polynomial
 const calcXpToLevelUp = (level) => {
     return Math.round(
         - 0.01 * (level - 1) ** 3
@@ -11,7 +12,7 @@ const calcXpToLevelUp = (level) => {
 }
 
 const LevelUp = (setPlayerState, setWorldState, level) => {
-    // execute all code that needs to be run at levelup in here
+    SoundLevelUp();
     AddNotification(setWorldState, `Level up to ${level}`);
     AddSkillPoint(setPlayerState, 1);
 }

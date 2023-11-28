@@ -82,6 +82,7 @@ const initialUtilState = {
     currentUiFocus: "offers",
     musicVolume: 1.0,
     fxVolume: 1.0,
+    isNewSave: true
 }
 
 export function getInitialPlayerState() {
