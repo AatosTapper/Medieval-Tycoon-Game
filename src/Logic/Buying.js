@@ -1,6 +1,8 @@
 import { GetItemById } from "./Item";
 import { UpdateEconomy } from "./Economy";
 import Transaction from "./Transaction";
+import { AddNotification } from "./NewNotification";
+
 
 
 
@@ -55,7 +57,7 @@ export const SellingItemOutShop = (playerState, setPlayerState,worldState,setWor
     newList[itemPosition][2] -= amount;
     
       Transaction(setPlayerState,amount * worldState.itemValues[worldState.sellingItems[itemPosition][0]])
-    
+     AddNotification(setWorldState,"you sold : "+amount + " " +GetItemById(worldState.sellingItems[itemPosition][0]).name + "  for : "+amount * worldState.itemValues[worldState.sellingItems[itemPosition][0]])
     
     
   

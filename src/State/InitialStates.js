@@ -35,11 +35,11 @@ const initialWorldState = {
                  For those craving a touch of the extraordinary, "The (shop name)" is now a beacon of enchantment in our fantastical city.
                 Stay tuned for more enchanting tales from the heart of our mystical realm!`
     },
-    notification : ["bonjour","feur"],
+    notification : [],
 
-    sellingItems : [[0,20,35],[1,50,92],[1,50,27]],
+    sellingItems : [[0,20,35],[1,50,92],[2,50,27]],
 
-    currentCustomers : [["George", 7,"mine",10],["Donald",3,"farm",15],["David", 7,"mine",10],["Arthur",3,"farm",15]],
+    currentCustomers : [["George", 7,"mine",100],["Donald",3,"farm",150],["David", 7,"mine",10],["Arthur",3,"farm",15]],
 
     possiblePreferences : ["farm","mine","wood","magic","crafting"],
 

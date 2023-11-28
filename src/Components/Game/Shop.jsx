@@ -53,7 +53,15 @@ const Shop = () => {
   
 
   
-
+for (let i = 0 ; i < worldState.sellingItems.length; i++)
+{
+  if (worldState.sellingItems[i][2]==0)
+  {
+    const newList = [...worldState.sellingItems];
+    newList.splice([i],1);
+    setWorldState({ ...worldState, sellingItems: newList });
+  }
+}
 
   return (
     <div>

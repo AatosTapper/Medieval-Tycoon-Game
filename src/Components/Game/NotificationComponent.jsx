@@ -27,6 +27,9 @@ const text = {
 }
 
 export const NotificationComponent = () => {
+  const maxNotif = 7;
+
+
   const { worldState, setWorldState } = useWorldContext();
 
   const Delete = (index) => {
@@ -35,7 +38,13 @@ export const NotificationComponent = () => {
 
     setWorldState({ ...worldState, notification: updatedNotifications });
   };
+if (worldState.notification.length > 7 ){
+  const nl = [...worldState.notification];
+  nl.splice(0, 1);
+  setWorldState({ ...worldState, notification: nl });
 
+
+}
   return (
     <div style={{ ...dimensions, ...backgroundStyle }}>
       <div style={text}>
