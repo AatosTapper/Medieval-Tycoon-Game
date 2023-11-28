@@ -6,6 +6,7 @@ import { AddNotification } from "./NewNotification";
 export const Buy = (worldState,setWorldState,playerState,setPlayerState) => {
    for (let i = 0 ; i < worldState.currentCustomers.length; i++)
    {
+    
         const preferenceModifier = 1.5;
         const buyingChance = 500;  
         const amountCoefficient = 10;

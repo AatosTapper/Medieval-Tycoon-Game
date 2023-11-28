@@ -13,7 +13,7 @@ export const GenerateClient = (worldState) => {
     "Aldgyth", "Wynburga", "Aethelwine", "Ealdgyth", "Leofgifu", 
     "Wynflaed", "Aelwig", "Eadred", "Leofstan", "Wynna", ]
 
-    const randomTime = Math.floor(Math.random() * (25 - 10 + 1)) + 10;
+    const randomTime = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
     const randomIndex = Math.floor(Math.random() * possibleNames.length);
     const preferencesIndex = Math.floor(Math.random() * worldState.possiblePreferences.length);
     const wealth = Math.floor(Math.random() * 9);
