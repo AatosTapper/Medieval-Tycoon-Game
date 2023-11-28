@@ -1,5 +1,6 @@
 import { GetItemById } from "./Item";
 import { UpdateEconomy } from "./Economy";
+import Transaction from "./Transaction";
 
 
 
@@ -52,12 +53,8 @@ export const SellingItemOutShop = (playerState, setPlayerState,worldState,setWor
   
     
     newList[itemPosition][2] -= amount;
-    setPlayerState((prevState) => ({
-
-        ...prevState,
-       money : playerState.money + amount * worldState.itemValues[worldState.sellingItems[itemPosition][0]]
-      }));
-      UpdateEconomy(setWorldState);
+    
+      Transaction(setPlayerState,amount * worldState.itemValues[worldState.sellingItems[itemPosition][0]])
     
     
     
