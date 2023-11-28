@@ -21,12 +21,16 @@ export const GenerateClient = (worldState) => {
     console.log(randomTime);
     
     const randomPreference = worldState.possiblePreferences[preferencesIndex];
-
     const newClient = [randomName, wealth, randomPreference, randomTime];
-    const newList = [...worldState.currentCustomers];
-    newList.push(newClient);
 
-    currentCustomers = newList;
+    if (currentCustomers === null) {
+        const newList = [...worldState.currentCustomers];
+        newList.push(newClient);
+        currentCustomers = newList;
+    }
+    else {
+        currentCustomers.push(newClient);
+    }
 };
 
 export const clearCurrentCustomers = () => {   
