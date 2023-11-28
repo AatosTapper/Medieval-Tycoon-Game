@@ -1,5 +1,4 @@
 export const GenerateClient = (worldState,setWorldState) => {
-
     //For the names I check some medieval english names but You can add some more if you want ! 
     const possibleNames = [ "Alfred", "Edith", "Eadric", "Aelfric", "Aethelred", 
     "Cenric", "Wulfric", "Ealdgyth", "Godric", "Aldred", 
@@ -16,54 +15,54 @@ export const GenerateClient = (worldState,setWorldState) => {
     const randomIndex = Math.floor(Math.random() * possibleNames.length);
     const preferencesIndex = Math.floor(Math.random() * worldState.possiblePreferences.length);
     const wealth = Math.floor(Math.random() * 9);
-    const randomName = possibleNames[randomIndex]
+    const randomName = possibleNames[randomIndex];
     console.log(randomTime);
     
-    const randomPreference = worldState.possiblePreferences[preferencesIndex]
+    const randomPreference = worldState.possiblePreferences[preferencesIndex];
 
     const nouveauClient = [randomName, wealth, randomPreference, randomTime];
-  
     
     const newList = [...worldState.currentCustomers];
-  
     
     newList.push(nouveauClient);
   
-    
-    setWorldState((prevState) => ({
-      ...prevState,
-      currentCustomers: newList,
-    }));
-  };
+    setWorldState((prevState) => {
+        return {
+        ...prevState,
+        currentCustomers: newList,
+    }});
+};
 
-  export const clearCurrentCustomers = (setWorldState) => {
-   
+export const clearCurrentCustomers = (setWorldState) => {   
     setWorldState((prevState) => ({
       ...prevState,
       currentCustomers: [],
     }));
-  };
+};
 
-  export const UpdateCustomers = (worldState, setWorldState) => 
-  {
-    let customers = worldState.currentCustomers;
-    for (let i = 0; i < customers.length; i++)
-    {
-      if (customers[i][3] <= 0)
-      {
-        customers.splice(i, 1); 
-        i--;
-        console.log("deleted");
-        continue;
-        
-      }
-      customers[i][3] -= 1;
+export const UpdateCustomers = async (worldState, setWorldState) => {
+    return new Promise((resolve, reject) => {
+        let customers = worldState.currentCustomers;
+        for (let i = 0; i < customers.length; i++)
+        {
+            if (customers[i][3] <= 0)
+            {
+                customers.splice(i, 1); 
+                i--;
+                console.log("deleted");
+                continue;
+            }
+            customers[i][3] -= 1;
 
-      
-  
-    }
-    setWorldState(oldState => ( {
-        ...oldState,
-        currentCustomers: customers
-    }))
-  }
+            console.log(customers[i][3]);
+        }
+
+        setWorldState(oldState => {
+            return {
+            ...oldState,
+            currentCustomers: customers
+        }});
+
+        resolve();
+    })   
+}

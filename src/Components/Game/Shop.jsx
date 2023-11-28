@@ -11,97 +11,86 @@ import { Buy } from "../../Logic/Buying";
 
 
 const Shop = () => {
-  const { playerState, setPlayerState } = usePlayerContext();
-  const { worldState, setWorldState } = useWorldContext();
-
- 
-  const [item, setItem] = useState(0); 
-  const [price, setPrice] = useState(20);
-  const [amount, setAmount] = useState(1);
-
-  const handleItemChange = (event) => {
-   
-    setItem(parseInt(event.target.value, 10) || 0);
-  };
-
-  const handlePriceChange = (event) => {
-    setPrice(Number(event.target.value) || 0);
-  };
-
-  const handleAmountChange = (event) => {
-    setAmount(Number(event.target.value) || 0);
-  };
-
-  
-  // Shop GAMELOOP
-  const updateIntervalMS = 1000;
-  useEffect(() => {
-    if ( worldState.openShop == false ){return false}
+    const { playerState, setPlayerState } = usePlayerContext();
+    const { worldState, setWorldState } = useWorldContext();
 
     
-      const interval = setInterval(() => {
-          console.log("test")
-          UpdateCustomers(worldState,setWorldState)
-          Buy(worldState,setWorldState,playerState, setPlayerState)
-        
-      }, updateIntervalMS);
-      return () => clearInterval(interval);
+    const [item, setItem] = useState(0); 
+    const [price, setPrice] = useState(20);
+    const [amount, setAmount] = useState(1);
+
+    const handleItemChange = (event) => {
     
-  },[worldState.openShop]);
- 
+        setItem(parseInt(event.target.value, 10) || 0);
+    };
+
+    const handlePriceChange = (event) => {
+        setPrice(Number(event.target.value) || 0);
+    };
+
+    const handleAmountChange = (event) => {
+        setAmount(Number(event.target.value) || 0);
+    };
 
   
+    // Shop GAMELOOP
+    const updateIntervalMS = 1000;
+    useEffect(() => {
+        if ( worldState.openShop == false ){return false}
+        const interval = setInterval( async () => {
+            console.log("test")
+            await UpdateCustomers(worldState,setWorldState)
+            Buy(worldState,setWorldState,playerState, setPlayerState)
+        }, updateIntervalMS);
+        return () => clearInterval(interval);
+    },[worldState.openShop]);
 
-  
-for (let i = 0 ; i < worldState.sellingItems.length; i++)
-{
-  if (worldState.sellingItems[i][2]==0)
-  {
-    const newList = [...worldState.sellingItems];
-    newList.splice([i],1);
-    setWorldState({ ...worldState, sellingItems: newList });
-  }
-}
+    for (let i = 0 ; i < worldState.sellingItems.length; i++)
+        {
+        if (worldState.sellingItems[i][2]==0)
+        {
+            const newList = [...worldState.sellingItems];
+            newList.splice([i],1);
+            setWorldState({ ...worldState, sellingItems: newList });
+        }
+    }
 
   return (
-    <div>
-      <h1>Shop</h1>
-     
-      <input type="number" value={item} onChange={handleItemChange} placeholder="Item" />
-      <input type="number" value={price} onChange={handlePriceChange} placeholder="Price" />
-      <input type="number" value={amount} onChange={handleAmountChange} placeholder="Amount" />
+        <div>
+            <h1>Shop</h1>
+            
+            <input type="number" value={item} onChange={handleItemChange} placeholder="Item" />
+            <input type="number" value={price} onChange={handlePriceChange} placeholder="Price" />
+            <input type="number" value={amount} onChange={handleAmountChange} placeholder="Amount" />
 
-      <h1>Items for sale:</h1>
-      
-      <button onClick={() => Sell(worldState, setWorldState, playerState, setPlayerState, item, price, amount)}>
-        Sell
-      </button>
-      <ul>
-        {worldState.sellingItems.map((item, index) => (
-          <li key={index}>
-            {"name: " + GetItemById(item[0]).name + "  "}
-            {"price: " + item[1] + " "}
-            {"amount: " + item[2] + " "}
-          </li>
-        ))}
-      </ul>
-      <ul>
-      {worldState.currentCustomers.map((item, index) => (
-          <li key={index}>
-            {"name : " + item[0] + "        "}
-            {"     wealth : " + item[1] + "      "}
-            {"     preferences : " + item[2]}
-          </li>
-       
-        ))}
-      </ul>
-      <button onClick={()=> GenerateClient(worldState,setWorldState)}> add client </button>
-      <button onClick={()=> clearCurrentCustomers(setWorldState)}> clear clients </button>
-    </div>
-
-
-  );
-  
+            <h1>Items for sale:</h1>
+            
+            <button onClick={() => Sell(worldState, setWorldState, playerState, setPlayerState, item, price, amount)}>
+                Sell
+            </button>
+            <ul>
+                {worldState.sellingItems.map((item, index) => (
+                <li key={index}>
+                    {"name: " + GetItemById(item[0]).name + "  "}
+                    {"price: " + item[1] + " "}
+                    {"amount: " + item[2] + " "}
+                </li>
+                ))}
+            </ul>
+            <ul>
+            {worldState.currentCustomers.map((item, index) => (
+                <li key={index}>
+                    {"name : " + item[0] + "        "}
+                    {"     wealth : " + item[1] + "      "}
+                    {"     preferences : " + item[2]}
+                </li>
+            
+                ))}
+            </ul>
+            <button onClick={()=> GenerateClient(worldState,setWorldState)}> add client </button>
+            <button onClick={()=> clearCurrentCustomers(setWorldState)}> clear clients </button>
+        </div>
+    );
 };
 
 export default Shop;
