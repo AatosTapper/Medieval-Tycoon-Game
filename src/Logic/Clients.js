@@ -31,39 +31,39 @@ export const GenerateClient = (worldState) => {
     else {
         currentCustomers.push(newClient);
     }
+    
 };
 
 export const clearCurrentCustomers = () => {   
     currentCustomers = [];
 };
 
-export const UpdateCustomers = async (worldState, setWorldState) => {
-    return new Promise((resolve, reject) => {
-        let customers = worldState.currentCustomers;
-        if (currentCustomers !== null) {
-            customers = currentCustomers;
-        }
-        
-        for (let i = 0; i < customers.length; i++)
+export const UpdateCustomers = (worldState, setWorldState) => {
+    let customers = worldState.currentCustomers;
+    if (currentCustomers !== null) {
+        customers = currentCustomers;
+    }
+    if (currentCustomers === null) {
+        currentCustomers = customers;
+    }
+    
+    for (let i = 0; i < customers.length; i++)
+    {
+        if (customers[i][3] <= 0)
         {
-            if (customers[i][3] <= 0)
-            {
-                customers.splice(i, 1); 
-                i--;
-                console.log("deleted");
-                continue;
-            }
-            customers[i][3] -= 1;
-
-            console.log(customers[i][3]);
+            customers.splice(i, 1); 
+            i--;
+            console.log("deleted");
+            continue;
         }
+        customers[i][3] -= 1;
 
-        setWorldState(oldState => {
-            return {
-            ...oldState,
-            currentCustomers: customers
-        }});
+        console.log(customers[i][3]);
+    }
 
-        resolve();
-    })   
+    setWorldState(oldState => {
+        return {
+        ...oldState,
+        currentCustomers: customers
+    }});
 }

@@ -14,7 +14,6 @@ const Shop = () => {
     const { playerState, setPlayerState } = usePlayerContext();
     const { worldState, setWorldState } = useWorldContext();
 
-    
     const [item, setItem] = useState(0); 
     const [price, setPrice] = useState(20);
     const [amount, setAmount] = useState(1);
@@ -30,30 +29,32 @@ const Shop = () => {
     const handleAmountChange = (event) => {
         setAmount(Number(event.target.value) || 0);
     };
-
   
     // Shop GAMELOOP
     const updateIntervalMS = 500;
     useEffect(() => {
-        if ( worldState.openShop == false ){ return; }
+        if ( worldState.openShop === false ) { return; }
 
-        const interval = setInterval( async () => {
-            await UpdateCustomers(worldState,setWorldState)
-            Buy(worldState,setWorldState,playerState, setPlayerState)
+        const interval = setInterval(() => {
+            UpdateCustomers(worldState, setWorldState)
+            Buy(worldState, setWorldState, playerState, setPlayerState);
+            console.log("Customer", worldState.currentCustomers);
         }, updateIntervalMS);
 
         return () => clearInterval(interval);
-    },[worldState.openShop]);
+    },[worldState]);
 
-    for (let i = 0 ; i < worldState.sellingItems.length; i++) {
-        if (worldState.sellingItems[i][2]==0) {
-            const newList = [...worldState.sellingItems];
-            newList.splice([i],1);
-            setWorldState({ ...worldState, sellingItems: newList });
+    useEffect(() => {
+        for (let i = 0 ; i < worldState.sellingItems.length; i++) {
+            if (worldState.sellingItems[i][2] === 0) {
+                const newList = [...worldState.sellingItems];
+                newList.splice([i], 1);
+                setWorldState({ ...worldState, sellingItems: newList });
+            }
         }
-    }
+    }, [worldState]);
 
-  return (
+    return (
         <div>
             <h1>Shop</h1>
             
