@@ -35,7 +35,7 @@ const Shop = () => {
     // Shop GAMELOOP
     const updateIntervalMS = 500;
     useEffect(() => {
-        if ( worldState.openShop == false ){ return; }
+        if ( worldState.openShop === false ){ return; }
 
         const interval = setInterval( async () => {
             await UpdateCustomers(worldState,setWorldState)
@@ -43,17 +43,19 @@ const Shop = () => {
         }, updateIntervalMS);
 
         return () => clearInterval(interval);
-    },[worldState.openShop]);
+    },[worldState]);
 
-    for (let i = 0 ; i < worldState.sellingItems.length; i++) {
-        if (worldState.sellingItems[i][2]==0) {
-            const newList = [...worldState.sellingItems];
-            newList.splice([i],1);
-            setWorldState({ ...worldState, sellingItems: newList });
+    useEffect(() => {
+        for (let i = 0 ; i < worldState.sellingItems.length; i++) {
+            if (worldState.sellingItems[i][2] === 0) {
+                const newList = [...worldState.sellingItems];
+                newList.splice([i], 1);
+                setWorldState({ ...worldState, sellingItems: newList });
+            }
         }
-    }
+    }, [worldState]);
 
-  return (
+    return (
         <div>
             <h1>Shop</h1>
             
