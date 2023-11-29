@@ -5,9 +5,11 @@ import { AddNotification } from "./NewNotification";
 
 export const Buy = (worldState, setWorldState, playerState, setPlayerState) => {
     //console.log("Customers", worldState.currentCustomers);
+    if (!Array.isArray(worldState.sellingItems) || !worldState.sellingItems.length) {
+        return;
+    }
     for (let i = 0 ; i < worldState.currentCustomers.length; i++)
     {
-    
         const preferenceModifier = 1.5;
         const buyingChance = 500;  
         const amountCoefficient = 10;
@@ -40,7 +42,7 @@ export const Buy = (worldState, setWorldState, playerState, setPlayerState) => {
     }
 }
 
-export const SellingItemOutShop = (playerState, setPlayerState,worldState,setWorldState, itemPosition, amount) => {
+const SellingItemOutShop = (playerState, setPlayerState,worldState,setWorldState, itemPosition, amount) => {
     const newList = [...worldState.sellingItems];
     newList[itemPosition][2] -= amount;
     

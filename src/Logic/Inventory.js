@@ -15,25 +15,24 @@ export const AddItemToInventory = (playerState, setPlayerState, itemName, amount
 }
 
 export const TakeItemFromInventory = (playerState, setPlayerState, itemName, amount) => {
-    let id = null;
+    let numItems = null;
 
     for (const key in ITEM) {
         if (itemName === ITEM[key].name) {
-            id = playerState.inventory[ITEM[key].id];
+            numItems = playerState.inventory[ITEM[key].id];
             break;
         }
     }
 
-    if (id === null) {
+    if (numItems === null) {
         console.log("Tried to get an item that doesn't exist from inventory.");
         return false;
     }
 
-    const numItems = playerState.inventory[id];
-    console.log(id)
+    console.log(numItems)
     console.log(amount)
     
-    if (amount > id && amount < 1) {
+    if (amount > numItems || amount < 1) {
         console.log("Not enough items in inventory.");
         return false;
     }
