@@ -23,14 +23,9 @@ export const GenerateClient = (worldState) => {
     const randomPreference = worldState.possiblePreferences[preferencesIndex];
     const newClient = [randomName, wealth, randomPreference, randomTime];
 
-    if (currentCustomers === null) {
-        const newList = [...worldState.currentCustomers];
-        newList.push(newClient);
-        currentCustomers = newList;
-    }
-    else {
-        currentCustomers.push(newClient);
-    }
+    const newList = [...worldState.currentCustomers];
+    newList.push(newClient);
+    currentCustomers = newList;
 };
 
 export const clearCurrentCustomers = () => {   
@@ -57,6 +52,8 @@ export const UpdateCustomers = (worldState, setWorldState) => {
         }
         customers[i][3] -= 1;
 
+        console.log(customers[i][3]);
+    }
         console.log(customers[i][3]);
     }
 

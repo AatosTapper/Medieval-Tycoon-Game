@@ -37,9 +37,10 @@ const Shop = () => {
     useEffect(() => {
         if ( worldState.openShop === false ){ return; }
 
-        const interval = setInterval( async () => {
-            await UpdateCustomers(worldState,setWorldState)
-            Buy(worldState,setWorldState,playerState, setPlayerState)
+        const interval = setInterval(() => {
+            UpdateCustomers(worldState, setWorldState)
+            Buy(worldState, setWorldState, playerState, setPlayerState);
+            console.log("Customer", worldState.currentCustomers);
         }, updateIntervalMS);
 
         return () => clearInterval(interval);

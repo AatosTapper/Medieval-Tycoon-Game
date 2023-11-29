@@ -3,9 +3,10 @@ import { UpdateEconomy } from "./Economy";
 import Transaction from "./Transaction";
 import { AddNotification } from "./NewNotification";
 
-export const Buy = (worldState,setWorldState,playerState,setPlayerState) => {
-   for (let i = 0 ; i < worldState.currentCustomers.length; i++)
-   {
+export const Buy = (worldState, setWorldState, playerState, setPlayerState) => {
+    //console.log("Customers", worldState.currentCustomers);
+    for (let i = 0 ; i < worldState.currentCustomers.length; i++)
+    {
     
         const preferenceModifier = 1.5;
         const buyingChance = 500;  
@@ -36,7 +37,7 @@ export const Buy = (worldState,setWorldState,playerState,setPlayerState) => {
             else { SellingItemOutShop(playerState, setPlayerState,worldState,setWorldState,randomIndex,amount); }
         }
         else { console.log("pas acheté"); }        
-   }
+    }
 }
 
 export const SellingItemOutShop = (playerState, setPlayerState,worldState,setWorldState, itemPosition, amount) => {
