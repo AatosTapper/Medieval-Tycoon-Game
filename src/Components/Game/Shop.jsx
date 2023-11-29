@@ -14,7 +14,6 @@ const Shop = () => {
     const { playerState, setPlayerState } = usePlayerContext();
     const { worldState, setWorldState } = useWorldContext();
 
-    
     const [item, setItem] = useState(0); 
     const [price, setPrice] = useState(20);
     const [amount, setAmount] = useState(1);
@@ -30,12 +29,11 @@ const Shop = () => {
     const handleAmountChange = (event) => {
         setAmount(Number(event.target.value) || 0);
     };
-
   
     // Shop GAMELOOP
     const updateIntervalMS = 500;
     useEffect(() => {
-        if ( worldState.openShop === false ){ return; }
+        if ( worldState.openShop === false ) { return; }
 
         const interval = setInterval(() => {
             UpdateCustomers(worldState, setWorldState)
