@@ -17,8 +17,6 @@ const LevelUp = (setPlayerState, setWorldState, level) => {
     AddSkillPoint(setPlayerState, 1);
 }
 
-// This is a special case where a logic file holds state, but it's
-// only for avoiding the polynomial calculation at each xp check.
 let xpToLevelUp = null;
 
 export default function UpdateXpAndLevel(worldState, setWorldState, playerState, setPlayerState) {
