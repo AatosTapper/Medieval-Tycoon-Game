@@ -69,7 +69,7 @@ const calcItemValues = (worldState) => {
             const bias = ITEM[item].softMin;
             let newValue = newValues[ITEM[item].id] + (companyValue / DEVIATION) * ITEM[item].valueEffectMatrix[companyId] * dampMultiplier;
             if (newValue <= bias) {
-                newValue = (newValue / 10) + bias; // clamp the value to a leaky ReLU type function
+                newValue = (newValue / 10) + bias - (bias / 10); // clamp the value to a leaky ReLU type function
             }
             newValues[ITEM[item].id] = Math.round(newValue * 10) / 10;
         }
