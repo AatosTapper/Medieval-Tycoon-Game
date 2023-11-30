@@ -1,16 +1,16 @@
 import {Howl, Howler} from 'howler';
 
 const DIR = "AudioFiles/FX/";
-const VOLUME_MULTIPLIER = 0.5;
+const VOLUME_MULTIPLIER = 0.7; // For mixing, not exposed to the player
 let FX_VOLUME = 1.0;
 
 // Functions
 
 export const UpdateFXVolume = (state) => {
-    let newVolume = state.fxVolume;
+    let newVolume = state.fxVolume * state.masterVolume;
     newVolume = newVolume < 0 ? 0 : newVolume;
     newVolume = newVolume > 1 ? 1 : newVolume;
-    FX_VOLUME = newVolume;
+    FX_VOLUME = newVolume * newVolume; // exponential due to desibels being logaritmic
 }
 
 export const SoundUpgrade = () => {

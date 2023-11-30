@@ -82,6 +82,7 @@ const initialWorldState = {
 const initialUtilState = {
     stateId: 2,
     currentUiFocus: "offers",
+    masterVolume: 1.0,
     musicVolume: 1.0,
     fxVolume: 1.0,
     isNewSave: true
