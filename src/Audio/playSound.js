@@ -48,7 +48,7 @@ export const SoundChangeDay = () => {
 export const SoundLevelUp = () => {
     const sound = new Howl({
         src: [DIR + "Epic_Level_Up_1.mp3"],
-        volume: FX_VOLUME ** 2 * VOLUME_MULTIPLIER * 0.4
+        volume: FX_VOLUME * VOLUME_MULTIPLIER * 0.4
     });
     sound.stop();
     sound.play();
