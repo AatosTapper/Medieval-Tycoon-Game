@@ -46,7 +46,11 @@ const Shop = () => {
 
     useEffect(() => {
         for (let i = 0 ; i < worldState.sellingItems.length; i++) {
-            if (worldState.sellingItems[i][2] === 0) {
+            if (worldState.sellingItems[i][2] == 0 
+                || worldState.sellingItems[i][2] == NaN
+                || worldState.sellingItems[i][2] == undefined
+                || worldState.sellingItems[i][2] == null) 
+            {
                 const newList = [...worldState.sellingItems];
                 newList.splice([i], 1);
                 setWorldState({ ...worldState, sellingItems: newList });

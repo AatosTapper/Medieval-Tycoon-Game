@@ -2,18 +2,23 @@ import { ITEM } from "./Item";
 import { AddItemToInventory } from "./Inventory"
 import Transaction from "./Transaction";
 import { SoundAcceptOffer } from "../Audio/playSound";
+import { RandGauss } from "./RandGauss";
 
 const GetWithName = (objectName) => {
     return ITEM[objectName];
 };
 
 const CreateOffer = (worldState, setWorldState, playerState) => {
-    const randomIndex = Math.floor(Math.random() * playerState.unlockedItems.length);
-    const randomObject = playerState.unlockedItems[randomIndex];
-    const realRandomObject = GetWithName(randomObject);
-    const randomNumber = Math.floor(Math.random() * 10) + 1;
-    const randomTimeLimit = Math.floor(Math.random() * 3);
-    const offer = [randomNumber, randomNumber * realRandomObject.value, realRandomObject.name, randomTimeLimit];
+    const roundingFactor = 10;
+
+    const randomObject = playerState.unlockedItems[Math.floor(Math.random() * playerState.unlockedItems.length)];
+    const realObject = GetWithName(randomObject);
+    const amount = Math.floor(Math.random() * 10 + 1);
+    const timeLimit = Math.floor(Math.random() * 3);
+    const priceOffset = RandGauss(1.05, 0.5);
+    const price = Math.round(amount * realObject.value * priceOffset * roundingFactor) / roundingFactor;
+
+    const offer = [amount, price, realObject.name, timeLimit];
 
     setWorldState(oldState => {
         const newOffers = [...oldState.currentOffers, offer];

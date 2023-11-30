@@ -76,7 +76,6 @@ export const ViewSelector = () => {
 
     return (
         <div className="View-Selector-Full">
-            <h1>View Selector</h1>
             <div className="View-Selector-Buttons">
                 <button onClick={() => SetViewTo("offers")} className="View-Selector-Button">Offers</button>
                 <button onClick={() => SetViewTo("shop")} className="View-Selector-Button">Shop</button>

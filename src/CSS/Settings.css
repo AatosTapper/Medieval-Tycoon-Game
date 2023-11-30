@@ -1,0 +1,26 @@
+.Settings-Page {
+    font-size: x-large;
+    background-color: #786c5f;
+    width: min-content;
+    padding: 20px;
+}
+
+.Settings-Header {
+    margin: 0px;
+    padding: 0px;
+    width: min-content
+}
+
+.Volume-Form {
+    width: min-content;
+}
+
+.Volume-Header {
+    font-size: xx-large;
+}
+
+.Volume-Slider {
+    width: 60vw;
+    padding: 0px;
+    margin: 0px;
+}

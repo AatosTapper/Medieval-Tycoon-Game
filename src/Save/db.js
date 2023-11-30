@@ -38,4 +38,6 @@ export const SaveToStorage = (playerState, worldState, utilState, setUtilState) 
     localStorage.setItem(PLAYER_ADDRESS, JSON.stringify(playerState));
     localStorage.setItem(WORLD_ADDRESS, JSON.stringify(worldState));
     localStorage.setItem(UTIL_ADDRESS, JSON.stringify(utilState));
+
+    console.log("Game Saved!");
 }

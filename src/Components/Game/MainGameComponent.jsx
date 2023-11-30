@@ -35,8 +35,8 @@ export default function MainGameComponent() {
     }, []);
 
     const backToMainMenu = () => {
-        SaveToStorage(playerState, worldState, utilState, setUtilState);
         navigate("/");
+        SaveToStorage(playerState, worldState, utilState, setUtilState);
     }
 
     const toSettings = () => {

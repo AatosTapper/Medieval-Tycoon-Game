@@ -28,12 +28,12 @@ export default function MainMenuComponent() {
     }, []);
     useEffect(() => {
         if (utilState.isNewSave === true) {
-            setGameButtonTxt("Start Game");
+            setGameButtonTxt(() => "Start Game");
         }
         else {
-            setGameButtonTxt("Continue Game");
+            setGameButtonTxt(() => "Continue Game");
         }
-    }, [utilState]);
+    });
 
     return (
         <div className="Font-Medieval Main-Menu">

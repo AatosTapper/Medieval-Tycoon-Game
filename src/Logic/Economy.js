@@ -6,11 +6,11 @@ import { RandGauss } from "./RandGauss";
 const NEW_DER_FRAC = 5;
 
 const CHAOS = 0.4; // Random offset range
-const INERTIA = 1.1; // How much derivative momentum is conserved
+const INERTIA = 1.6; // How much derivative momentum is conserved
 const INERTIA_RANGE = 0.2; // Random range
 const MARKET_INFLUENCE = 0.02;
 const MARKET_INFLUENCE_RANGE = 0.3;
-const DEVIATION = 10.1; // how far from 0 can value go before market reacts
+export const DEVIATION = 8.1; // how far from 0 can value go before market reacts
 const DEVIATION_RANGE = 0.4;
 
 const calcOffset = (derivative, globalValue) => {
@@ -67,29 +67,32 @@ const updateAll = (setWorldState) => {
             + oldCrafting.value) / 5
         );
 
-        console.log("Mine value: ", oldMine.value);
-
         return ({
             ...oldState,
             company: {
                 ...oldState.company,
                 mine: {
+                    id: 0,
                     value: mineValue,
                     derivative: calcDerivative(oldMine.derivative, mineOffset, mineValue)
                 },
                 farm: {
+                    id: 1,
                     value: farmValue,
                     derivative: calcDerivative(oldFarm.derivative, farmOffset, farmValue)
                 },
                 wood: {
+                    id: 2,
                     value: woodValue,
                     derivative: calcDerivative(oldWood.derivative, woodOffset, woodValue)
                 },
                 magic: {
+                    id: 3,
                     value: magicValue,
                     derivative: calcDerivative(oldMagic.derivative, magicOffset, magicValue)
                 },
                 crafting: {
+                    id: 4,
                     value: craftingValue,
                     derivative: calcDerivative(oldCrafting.derivative, craftingOffset, craftingValue)
                 },

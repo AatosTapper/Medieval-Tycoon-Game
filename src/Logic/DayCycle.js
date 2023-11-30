@@ -1,7 +1,7 @@
 import { SoundChangeDay, SoundLevelUp } from "../Audio/playSound";
 import { SaveToStorage } from "../Save/db";
 import { UpdateEconomy } from "./Economy";
-import { SetItemValues } from "./Item";
+import { UpdateItemValues } from "./Item";
 import UpdateXpAndLevel from "./LevelUp";
 import { GenerateOffers, UpdateOffers } from "./NewOffers";
 
@@ -46,7 +46,7 @@ const NewDay = async (worldState, setWorldState, playerState, setPlayerState, ut
     UpdateXpAndLevel(worldState, setWorldState, playerState, setPlayerState);
     UpdateOffers(setWorldState);
     GenerateOffers(worldState, setWorldState, playerState);
-    SetItemValues(worldState);
+    UpdateItemValues(worldState, setWorldState);
     SaveToStorage(playerState, worldState, utilState, setUtilState);
 }
 
