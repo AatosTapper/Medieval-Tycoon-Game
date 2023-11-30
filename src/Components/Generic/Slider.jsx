@@ -7,10 +7,20 @@ import "../../CSS/Slider.css";
 //     startVal     = the value that the slider starts with
 //     className    = css class name for custom changes to the slider
 //     id           = css/html id for forms and value updating
+//     header       = OPTIONAL text for automatic label to the slider
 
-export const Slider = ({ onChange, min, max, val, className, id }) => {
+export const Slider = ({ onChange, min, max, val, className, id, header = null }) => {
+    const renderLabel = () => {
+        if (header === null)
+            return <></>;
+        return (
+            <label className="Slider-Header" htmlFor={id}>{header}</label>
+        );
+    }
+
     return (
         <div className={className}>
+            {renderLabel()}
             <input 
                 type="range" 
                 min={min} 

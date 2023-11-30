@@ -30,3 +30,8 @@
     height: 30px;
     background: #e9c796;
 }
+
+.Slider-Header {
+    width: min-content;
+    margin: 0px;
+}
