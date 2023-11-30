@@ -4,7 +4,7 @@ import "../../CSS/Slider.css";
 // Manual:
 //     onChange     = a callback function that is challed when the slider value changes
 //     min, max     = slider's minimum and maximum values
-//     startVal     = the value that the slider starts with
+//     val          = the value of the slider (the handle needs this for example)
 //     className    = css class name for custom changes to the slider
 //     id           = css/html id for forms and value updating
 //     header       = OPTIONAL text for automatic label to the slider
