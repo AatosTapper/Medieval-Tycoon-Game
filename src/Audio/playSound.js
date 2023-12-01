@@ -13,6 +13,54 @@ export const UpdateFXVolume = (state) => {
     FX_VOLUME = newVolume * newVolume; // exponential due to desibels being logaritmic
 }
 
+// -------- Money Sound stuff with timers and so on ------------
+// Trying to avoid comb-filtering and other chaos
+const startMoneySoundTimer = () => {
+    CAN_PLAY_MONEY_SOUND = false;
+    setTimeout(() => CAN_PLAY_MONEY_SOUND = true, 200);
+}
+
+let CAN_PLAY_MONEY_SOUND = true;
+
+export const SoundGetMoneyLow = () => {
+    if (!CAN_PLAY_MONEY_SOUND) 
+        return;
+    const sound = new Howl({
+        src: [DIR + "Get_Money_Low.mp3"],
+        volume: FX_VOLUME * VOLUME_MULTIPLIER * 0.35,
+        onplay: () => startMoneySoundTimer()
+    });
+    sound.stop();
+    sound.play();
+}
+
+export const SoundGetMoneyMed = () => {
+    if (!CAN_PLAY_MONEY_SOUND) 
+        return;
+    const sound = new Howl({
+        src: [DIR + "Get_Money_Med.mp3"],
+        volume: FX_VOLUME * VOLUME_MULTIPLIER * 0.4,
+        onplay: () => startMoneySoundTimer()
+    });
+    sound.stop();
+    sound.play();
+}
+
+export const SoundGetMoneyHig = () => {
+    if (!CAN_PLAY_MONEY_SOUND) 
+        return;
+    const sound = new Howl({
+        src: [DIR + "Get_Money_Hig.mp3"],
+        volume: FX_VOLUME * VOLUME_MULTIPLIER * 0.45,
+        onplay: () => startMoneySoundTimer()
+    });
+    sound.stop();
+    sound.play();
+}
+
+// --------------------
+// --------------------
+
 export const SoundUpgrade = () => {
     const sound = new Howl({
         src: [DIR + "Accept_Offer_1.mp3"],

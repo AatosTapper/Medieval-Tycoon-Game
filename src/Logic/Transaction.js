@@ -1,4 +1,7 @@
+import { CalcMoneySound } from "./GetMoneySound";
+
 export default function Transaction(setPlayerState, amount) {
+    if (amount > 0) { CalcMoneySound(amount); }
     setPlayerState(oldState => ({
         ...oldState,
         money: oldState.money + amount
