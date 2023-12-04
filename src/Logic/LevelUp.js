@@ -5,10 +5,10 @@ import { AddSkillPoint, AddXp } from "./Transaction";
 // TODO: find a good polynomial
 const calcXpToLevelUp = (level) => {
     return Math.round(
-        - 0.01 * (level - 1) ** 3
-        + 4 * (level - 1) ** 2
+        - 0.004 * (level - 1) ** 3
+        + 3 * (level - 1) ** 2
         + 100 * (level - 1)
-        + 500);
+        + 100);
 }
 
 const LevelUp = (setPlayerState, setWorldState, level) => {
