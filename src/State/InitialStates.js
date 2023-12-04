@@ -38,13 +38,9 @@ const initialWorldState = {
         text: initialNewspaperText
     },
     notification : [],
-
     sellingItems : [[0,20,35],[1,50,92],[2,50,27]],
-
     currentCustomers : [["George", 7,"mine",100],["Donald",3,"farm",150],["David", 7,"mine",10],["Arthur",3,"farm",15]],
-
     possiblePreferences : ["farm","mine","wood","magic","crafting"],
-
     openShop : false,
     
     company: {

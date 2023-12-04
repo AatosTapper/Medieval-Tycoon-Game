@@ -1,5 +1,4 @@
 .bottom-right-button {
-    
     margin: 20px;
     padding: 50px;
 
@@ -13,13 +12,11 @@
     image-rendering: pixelated;
     background-size: contain;
     grid-column: 4; 
-  justify-self: end; 
-  grid-row: span 2;
+    justify-self: end; 
+    grid-row: span 2;
 }
 
 .second-button {
-    
-    
     margin: 20px;
     padding: 50px;
 
