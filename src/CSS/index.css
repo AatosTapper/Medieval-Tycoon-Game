@@ -6,9 +6,9 @@ put it here.
 .Font-Medieval {
     font-family: 'Pixelify Sans', sans-serif;
 }
+
 .Font-Pixel {
-   
-font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 body {
@@ -38,20 +38,19 @@ ul {
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    grid-gap: 10px; 
-  }
+    display: flex;
+    justify-content: space-between;
+}
 
-  .item1 {
-    grid-column: 1;  
-  }
+.Left-Ui-Bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-  .item4 {
-    grid-column: 4;  
-  }
-
-  .item23 {
-
-    grid-column: 2 / span 2;
-  }
+.Right-Ui {
+    justify-content: center;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}

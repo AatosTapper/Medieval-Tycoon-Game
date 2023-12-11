@@ -1,21 +1,30 @@
 .View-Switcher-Full {
     background-color: rgb(97, 66, 12);
-    width: max-content;  
+    width: auto;  
+    height: auto;
 }
 
 .View-Selector-Full {
+    
     background-color: rgb(97, 66, 12);
     width: max-content;
+    
 }
 
 .View-Selector-Buttons {
     background-color: rgb(134, 90, 20);
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    height: 450px;
     width: max-content;
     display: flex;
     flex-direction: column;
 }
 
 .View-Selector-Button {
-    width: max-content;
+    height: max-content;
+    width: auto;
 }
