@@ -42,11 +42,9 @@ const globalFontStyle = {
 
 export const Newspaper = () => {
     return (
-        <>
-            <div style={newspaperStyle} className="animated bounceInLeft">
-                <StaticMessage />
-            </div>
-        </>
+        <div style={newspaperStyle} className="animated bounceInLeft">
+            <StaticMessage />
+        </div>
     );
 }
 
