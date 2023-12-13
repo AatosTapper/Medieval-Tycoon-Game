@@ -5,7 +5,7 @@ import { useWorldContext } from "../../State/WorldContextProvider";
 const newspaperStyle = {
     paddinRight : "10px",
     display: "inline-block",
-    width: "450px",
+    width: "max-content",
     height: "450px",
     backgroundImage: "url('src/images/newspaper.png')",
     
@@ -18,21 +18,20 @@ const newspaperStyle = {
 };
 
 const titleFontStyle = {
-    fontSize: "10px",
+    fontSize: "15px",
     fontWeight: "bold",
     width: "250px",
-    
 };
 
 const gazetteFontStyle = {
     marginTop : '50px',
     fontSize: "17px",
     fontWeight: "bold",
-    width: "250px",
+    width: "300px",
 };
 
 const textFontStyle = {
-    fontSize: "13px",
+    fontSize: "12px",
     width: "250px",
 };
 
@@ -43,11 +42,9 @@ const globalFontStyle = {
 
 export const Newspaper = () => {
     return (
-        <>
-            <div style={newspaperStyle} className="animated bounceInLeft">
-                <StaticMessage />
-            </div>
-        </>
+        <div style={newspaperStyle} className="animated bounceInLeft">
+            <StaticMessage />
+        </div>
     );
 }
 

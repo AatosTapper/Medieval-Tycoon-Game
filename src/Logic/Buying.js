@@ -59,18 +59,10 @@ const SellingItemOutShop = (playerState, setPlayerState,worldState,setWorldState
     }));
 };
 
-export const openTheShop = (setWorldState) => {
-  setWorldState((prevState) => ({
-    ...prevState,
-    openShop: true,
-  }));
+export const switchShop = (setWorldState) => {
+    setWorldState((prevState) => ({
+        ...prevState,
+        openShop: !prevState.openShop,
+    }));
 };
-
-export const closeTheShop = (setWorldState) => {
-  setWorldState((prevState) => ({
-    ...prevState,
-    openShop: false,
-  }));
-};
-
 

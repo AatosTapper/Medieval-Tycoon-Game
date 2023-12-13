@@ -7,13 +7,13 @@ import NewDay from "../../Logic/DayCycle";
 import "../../CSS/buttons.css";
 import "../../CSS/index.css";
 import ProfileInfo from "../Game/ProfileInfo";
-import { NotificationComponent } from "./NotificationComponent";
+import { NotificationCentre } from "./NotificationCentre";
 import { Newspaper } from "./Newspaper";
 import { AddNotification } from "../../Logic/NewNotification";
 import { ViewSwitcher, ViewSelector } from "./ViewSwitcher";
 import { PlayMusicMain, StopMusicMain, UpdateMusicVolume } from "../../Audio/playMusic";
 import { UpdateFXVolume } from "../../Audio/playSound";
-import { openTheShop } from "../../Logic/Buying";
+import { switchShop } from "../../Logic/Buying";
 import { SaveToStorage } from "../../Save/db";
 
 
@@ -49,31 +49,29 @@ export default function MainGameComponent() {
 
     return (
         <div className="Font-Medieval Game container">
-            <div className="item1">
+            <div className="Left-Ui">
                 <ProfileInfo />
-                <Newspaper />
-                <div style={{ gridColumn: 'span 1', justifySelf: 'end' }}>
-                    <ViewSelector />
+                <div className="Left-Ui-Bottom">
+                    <Newspaper />
+                    <div style={{ gridColumn: 'span 1', justifySelf: 'end' }}>
+                        <ViewSelector />
+                    </div>
                 </div>
             </div>
-            <div className="item23">
+            <div className="Middle-Ui">
                 <ViewSwitcher />  
             </div>
-            <div className="item4">
-                <NotificationComponent />
-                <button onClick={() => AddNotification(setWorldState,"Nouvelle notification")}>
-                    Add Notification
-                </button>
+            <div className="Right-Ui">
+                <NotificationCentre />
+
                 <button onClick={backToMainMenu}>Save And Exit</button>
                 <button onClick={toSettings}>Settings</button>
-            </div>
-            <div className="bottom-right-button">
-                <button onClick={nextDay}>Change day</button>
-                
-                
-            </div>
-            <div className="second-button">
-                <button onClick={() => openTheShop(setWorldState)}>Open the shop </button>
+                <div className="bottom-right-button">
+                    <button onClick={nextDay}>Change day</button>
+                </div>
+                <div className="second-button">
+                    <button onClick={() => switchShop(setWorldState)}>{worldState.openShop ? "Close Shop" : "Open Shop"}</button>
+                </div>
             </div>
         </div>
     );

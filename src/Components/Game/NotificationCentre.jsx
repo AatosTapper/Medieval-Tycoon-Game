@@ -1,6 +1,8 @@
 import React from "react";
 
 import { useWorldContext } from "../../State/WorldContextProvider";
+import { Notification } from "./Notification";
+import "../../CSS/Notification.css"
 
 const backgroundStyle = {
     backgroundImage: "url('src/images/notificationWindow.png')",
@@ -14,12 +16,8 @@ const dimensions = {
     height: "600px",
 };
 
-const text = {
-    marginLeft : "35px",
-};
-
-export const NotificationComponent = () => {
-    const maxNotif = 7;
+export const NotificationCentre = () => {
+    const maxNotifs = 10;
     const { worldState, setWorldState } = useWorldContext();
 
     const Delete = (index) => {
@@ -28,7 +26,7 @@ export const NotificationComponent = () => {
         setWorldState({ ...worldState, notification: updatedNotifications });
     };
 
-    if (worldState.notification.length > 7 ){
+    if (worldState.notification.length > maxNotifs ){
         const nl = [...worldState.notification];
         nl.splice(0, 1);
         setWorldState({ ...worldState, notification: nl });
@@ -36,14 +34,13 @@ export const NotificationComponent = () => {
 
     return (
         <div style={{ ...dimensions, ...backgroundStyle }}>
-            <div style={text}>
-                <ul>
-                {worldState.notification.map((notif, index) => (
-                    <li key={index}>
-                    <p>{notif}</p> {/* I added this <p> tag here so now it should work */}
-                    <button className="Button-Accept-Offer Font-Medieval" onClick={() => Delete(index)}>Delete</button>
-                    </li>
-                ))}
+            <div className="Notification-Centre">
+                <ul className="ul-notif">
+                    {worldState.notification.map((notif, index) => (
+                        <li key={index}>
+                            <Notification text={notif} deleteFunc={Delete} index={index} />
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>

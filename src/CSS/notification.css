@@ -1,0 +1,28 @@
+.Notification-Centre {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ul-notif {
+    margin: 25px;
+}
+
+.Full-Notification {
+    background-color: rgb(106, 85, 51);
+
+    display: flex;
+    padding: 2px;
+
+    margin-bottom: 10px;
+}
+
+.Notification-Text {
+    width: auto;
+    height: min-content;
+
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
