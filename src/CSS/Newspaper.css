@@ -1,3 +1,28 @@
+/* I moved stuff here because it's good practice to put css in a separate file */
+
+.Newspaper-Global-Style {
+    margin-left: 50px;
+    padding-left: 0px;
+}
+
+.Newspaper-Text-Font-Style {
+    font-size: 12px;
+    width: 250px;
+}
+
+.Newspaper-Title-Font-Style {
+    font-size: 15px;
+    font-weight: bold;
+    width: 250px;
+}
+
+.Newspaper-Gazette-Font-Style {
+    margin-top: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    width: 300px;
+}
+
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
