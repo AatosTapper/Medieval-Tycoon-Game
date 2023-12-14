@@ -8,7 +8,7 @@ const InfoStyle = {
 
     backgroundSize: "cover", 
     backgroundRepeat: "no-repeat", 
-    marginLeft : "20px",
+    marginLeft : "0px",
     imageRendering: "pixelated",    
     backgroundSize : "contain",
     padding : "20px",

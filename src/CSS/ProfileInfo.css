@@ -1,7 +1,7 @@
 .Profile-Info-Box {
     display: flex;
     flex-direction: column;
-    padding: 0.5vw;
+    padding: 5px;
 
     width: min-content;
 }
@@ -10,26 +10,26 @@
     font-size: large;
     width: max-content;
 
-    padding: 0.5vw;
+    padding: 5px;
 }
 
 #Profile-Info-Level {
     font-size: medium;
     width: max-content;
 
-    padding: 0.5vw;
+    padding: 5px;
 }
 
 #Profile-Info-XP {
     font-size: medium;
     width: max-content;
 
-    padding: 0.5vw;
+    padding: 5px;
 }
 
 #Profile-Info-Money {
     font-size: medium;
     width: max-content;
 
-    padding: 0.5vw;
+    padding: 5px;
 }
