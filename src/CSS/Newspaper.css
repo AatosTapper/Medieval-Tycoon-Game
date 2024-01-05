@@ -1,26 +1,26 @@
 /* I moved stuff here because it's good practice to put css in a separate file */
 
 .Newspaper-Global-Style {
-    margin-left: 2.6%;
-    padding-left: 0%;
+    margin-left: 50px;
+    padding-left: 0px;
 }
 
 .Newspaper-Text-Font-Style {
-    font-size: 75%;
-    width: 13%;
+    font-size: 12px;
+    width: 250px;
 }
 
 .Newspaper-Title-Font-Style {
-    font-size: 85%;
+    font-size: 15px;
     font-weight: bold;
-    width: 13%;
+    width: 250px;
 }
 
 .Newspaper-Gazette-Font-Style {
-    margin-top: 2.6%;
-    font-size: 106%;
+    margin-top: 50px;
+    font-size: 17px;
     font-weight: bold;
-    width: 15.6%;
+    width: 300px;
 }
 
 .animated {
